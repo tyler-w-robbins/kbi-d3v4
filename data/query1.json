@@ -1,0 +1,1222 @@
+{
+    "records": [{
+        "keys": ["p1", "p2"],
+        "length": 2,
+        "_fields": [{
+            "start": {
+                "identity": "6491719",
+                "labels": ["Plant"],
+                "properties": {
+                    "Synonyms": ["highbush blueberry", " American blueberry"],
+                    "Preferred_Term": "Vaccinium corymbosum",
+                    "Source_ID": "NCBI_TAXONOMY:69266",
+                    "Rank": "species",
+                    "Term": "Vaccinium corymbosum",
+                    "Source": "NCBI_Taxonomy"
+                },
+                "id": "6491719"
+            },
+            "end": {
+                "identity": "580405",
+                "labels": ["Gene"],
+                "properties": {
+                    "Synonyms": ["FKBP4", "FKBP4", "51 kDa FK506-binding protein", "FK506 binding protein 4, 59kDa", "FK506-binding protein 4 (59kD)", "HSP binding immunophilin", "T-cell FK506-binding protein, 59kD", "peptidylprolyl cis-trans isomerase", "rotamase", "FKBP51", "FKBP52", "FKBP59", "HBI", "Hsp56", "PPIase", "p52"],
+                    "Description": "FK506 binding protein 4",
+                    "GeneID": "ENTREZ:2288",
+                    "Source": "NCBI_Entrez_Gene"
+                },
+                "id": "580405"
+            },
+            "segments": [{
+                "start": {
+                    "identity": "6491719",
+                    "labels": ["Plant"],
+                    "properties": {
+                        "Synonyms": ["highbush blueberry", " American blueberry"],
+                        "Preferred_Term": "Vaccinium corymbosum",
+                        "Source_ID": "NCBI_TAXONOMY:69266",
+                        "Rank": "species",
+                        "Term": "Vaccinium corymbosum",
+                        "Source": "NCBI_Taxonomy"
+                    },
+                    "id": "6491719"
+                },
+                "relationship": {
+                    "identity": "7523040",
+                    "start": "6491719",
+                    "end": "4903772",
+                    "type": "store",
+                    "properties": {
+                        "hit_text": "Quality of blueberry fruit /Vaccinium corymbosum L./ stored under LPS, CA, and normal air storage...",
+                        "source": "linguamatics_title",
+                        "doc_id": "IND92016423"
+                    },
+                    "id": "7523040",
+                    "startNode": "6491719",
+                    "endNode": "4903772"
+                },
+                "end": {
+                    "identity": "4903772",
+                    "labels": ["Chemical"],
+                    "properties": {
+                        "Synonyms": ["ChEBI:C00076 KEGG COMPOUND", "DrugBank:DB01373 DrugBank", "ChemIDplus:7440-70-2 CAS Registry Number", "WebElements:Ca WebElements", "calcium"],
+                        "Definition": "An alkaline earth metal atom that has formula Ca.",
+                        "Source_ID": "CHEBI:22984",
+                        "Source": "chebi_ontology",
+                        "Name": "calcium atom"
+                    },
+                    "id": "4903772"
+                }
+            }, {
+                "start": {
+                    "identity": "4903772",
+                    "labels": ["Chemical"],
+                    "properties": {
+                        "Synonyms": ["ChEBI:C00076 KEGG COMPOUND", "DrugBank:DB01373 DrugBank", "ChemIDplus:7440-70-2 CAS Registry Number", "WebElements:Ca WebElements", "calcium"],
+                        "Definition": "An alkaline earth metal atom that has formula Ca.",
+                        "Source_ID": "CHEBI:22984",
+                        "Source": "chebi_ontology",
+                        "Name": "calcium atom"
+                    },
+                    "id": "4903772"
+                },
+                "relationship": {
+                    "identity": "7434614",
+                    "start": "5354068",
+                    "end": "4903772",
+                    "type": "blanch",
+                    "properties": {
+                        "hit_text": "However, potato strips blanching in the solutions of calcium and magnesium salts prevents further ...",
+                        "source": "linguamatics_abstract",
+                        "doc_id": "13678258"
+                    },
+                    "id": "7434614",
+                    "startNode": "5354068",
+                    "endNode": "4903772"
+                },
+                "end": {
+                    "identity": "5354068",
+                    "labels": ["Plant"],
+                    "properties": {
+                        "Synonyms": ["potatoes", " Solanum tuberosum subsp. tuberosum"],
+                        "Preferred_Term": "Solanum tuberosum",
+                        "Source_ID": "NCBI_TAXONOMY:4113",
+                        "Rank": "species",
+                        "Term": "Solanum tuberosum",
+                        "Source": "NCBI_Taxonomy"
+                    },
+                    "id": "5354068"
+                }
+            }, {
+                "start": {
+                    "identity": "5354068",
+                    "labels": ["Plant"],
+                    "properties": {
+                        "Synonyms": ["potatoes", " Solanum tuberosum subsp. tuberosum"],
+                        "Preferred_Term": "Solanum tuberosum",
+                        "Source_ID": "NCBI_TAXONOMY:4113",
+                        "Rank": "species",
+                        "Term": "Solanum tuberosum",
+                        "Source": "NCBI_Taxonomy"
+                    },
+                    "id": "5354068"
+                },
+                "relationship": {
+                    "identity": "8432826",
+                    "start": "5354068",
+                    "end": "4881596",
+                    "type": "compens",
+                    "properties": {
+                        "hit_text": "Colorado potato beetles compensate for tomato cathepsin D inhibitor expressed in transgenic potato.",
+                        "source": "linguamatics_title",
+                        "doc_id": "14981655"
+                    },
+                    "id": "8432826",
+                    "startNode": "5354068",
+                    "endNode": "4881596"
+                },
+                "end": {
+                    "identity": "4881596",
+                    "labels": ["Chemical"],
+                    "properties": {
+                        "Synonyms": ["inhibitor"],
+                        "Definition": "A substance that diminishes the rate of a chemical reaction.",
+                        "Source_ID": "CHEBI:35222",
+                        "Source": "chebi_ontology",
+                        "Name": "inhibitor"
+                    },
+                    "id": "4881596"
+                }
+            }, {
+                "start": {
+                    "identity": "4881596",
+                    "labels": ["Chemical"],
+                    "properties": {
+                        "Synonyms": ["inhibitor"],
+                        "Definition": "A substance that diminishes the rate of a chemical reaction.",
+                        "Source_ID": "CHEBI:35222",
+                        "Source": "chebi_ontology",
+                        "Name": "inhibitor"
+                    },
+                    "id": "4881596"
+                },
+                "relationship": {
+                    "identity": "7265767",
+                    "start": "4881596",
+                    "end": "580405",
+                    "type": "nuclear",
+                    "properties": {
+                        "hit_text": "... , a novel nuclear factor-kappaB inhibitor, blocks nuclear import of RelB:p52 dimer and sensitizes prostate cancer ...",
+                        "source": "linguamatics_title",
+                        "doc_id": "18723484"
+                    },
+                    "id": "7265767",
+                    "startNode": "4881596",
+                    "endNode": "580405"
+                },
+                "end": {
+                    "identity": "580405",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["FKBP4", "FKBP4", "51 kDa FK506-binding protein", "FK506 binding protein 4, 59kDa", "FK506-binding protein 4 (59kD)", "HSP binding immunophilin", "T-cell FK506-binding protein, 59kD", "peptidylprolyl cis-trans isomerase", "rotamase", "FKBP51", "FKBP52", "FKBP59", "HBI", "Hsp56", "PPIase", "p52"],
+                        "Description": "FK506 binding protein 4",
+                        "GeneID": "ENTREZ:2288",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "580405"
+                }
+            }],
+            "length": 4
+        }, {
+            "start": {
+                "identity": "580405",
+                "labels": ["Gene"],
+                "properties": {
+                    "Synonyms": ["FKBP4", "FKBP4", "51 kDa FK506-binding protein", "FK506 binding protein 4, 59kDa", "FK506-binding protein 4 (59kD)", "HSP binding immunophilin", "T-cell FK506-binding protein, 59kD", "peptidylprolyl cis-trans isomerase", "rotamase", "FKBP51", "FKBP52", "FKBP59", "HBI", "Hsp56", "PPIase", "p52"],
+                    "Description": "FK506 binding protein 4",
+                    "GeneID": "ENTREZ:2288",
+                    "Source": "NCBI_Entrez_Gene"
+                },
+                "id": "580405"
+            },
+            "end": {
+                "identity": "5245383",
+                "labels": ["Medical_Heading"],
+                "properties": {
+                    "Synonyms": ["Focal Onset Alzheimer's Disease", "Alzheimer Type Dementia", "Senile Dementia, Acute Confusional", "Dementia, Alzheimer Type", "Disease, Alzheimer", "Alzheimer's Disease, Focal Onset", "Primary Senile Degenerative Dementia", "Alzheimer Sclerosis", "Alzheimer Type Senile Dementia", "Syndrome, Alzheimer", "Senile Dementia", "Sclerosis, Alzheimer", "Dementia, Alzheimer-Type (ATD)", "Alzheimer-Type Dementia (ATD)", "Disease, Alzheimer's", "Alzheimer Syndrome", "Alzheimer Type Dementia (ATD)", "Presenile Dementia", "Alzheimer's Disease", "Acute Confusional Senile Dementia", "Early Onset Alzheimer Disease", "Alzheimer Dementia (AD)", "Senile Dementia, Alzheimer Type", "Late Onset Alzheimer Disease", "Presenile Alzheimer Dementia", "Alzheimer Disease, Early Onset", "Familial Alzheimer Disease (FAD)", "Dementia, Alzheimer (AD)", "Dementia, Senile", "Alzheimer Disease, Late Onset", "Dementia, Presenile", "Dementia, Primary Senile Degenerative"],
+                    "Semantic_Type": ["T047"],
+                    "Mesh_TreeNumber": "C10.574.945.249;C10.228.140.380.100;F03.615.400.100",
+                    "Source_id": "D000544",
+                    "Term": "Alzheimer Disease",
+                    "Source": "MeSH"
+                },
+                "id": "5245383"
+            },
+            "segments": [{
+                "start": {
+                    "identity": "580405",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["FKBP4", "FKBP4", "51 kDa FK506-binding protein", "FK506 binding protein 4, 59kDa", "FK506-binding protein 4 (59kD)", "HSP binding immunophilin", "T-cell FK506-binding protein, 59kD", "peptidylprolyl cis-trans isomerase", "rotamase", "FKBP51", "FKBP52", "FKBP59", "HBI", "Hsp56", "PPIase", "p52"],
+                        "Description": "FK506 binding protein 4",
+                        "GeneID": "ENTREZ:2288",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "580405"
+                },
+                "relationship": {
+                    "identity": "7355771",
+                    "start": "580405",
+                    "end": "5245383",
+                    "type": "Prevent",
+                    "properties": {
+                        "hit_text": "... Potent of Anthocyanin Regulation of FKBP52 to Prevent Alzheimer's Disease.",
+                        "source": "linguamatics_title",
+                        "doc_id": "24899909"
+                    },
+                    "id": "7355771",
+                    "startNode": "580405",
+                    "endNode": "5245383"
+                },
+                "end": {
+                    "identity": "5245383",
+                    "labels": ["Medical_Heading"],
+                    "properties": {
+                        "Synonyms": ["Focal Onset Alzheimer's Disease", "Alzheimer Type Dementia", "Senile Dementia, Acute Confusional", "Dementia, Alzheimer Type", "Disease, Alzheimer", "Alzheimer's Disease, Focal Onset", "Primary Senile Degenerative Dementia", "Alzheimer Sclerosis", "Alzheimer Type Senile Dementia", "Syndrome, Alzheimer", "Senile Dementia", "Sclerosis, Alzheimer", "Dementia, Alzheimer-Type (ATD)", "Alzheimer-Type Dementia (ATD)", "Disease, Alzheimer's", "Alzheimer Syndrome", "Alzheimer Type Dementia (ATD)", "Presenile Dementia", "Alzheimer's Disease", "Acute Confusional Senile Dementia", "Early Onset Alzheimer Disease", "Alzheimer Dementia (AD)", "Senile Dementia, Alzheimer Type", "Late Onset Alzheimer Disease", "Presenile Alzheimer Dementia", "Alzheimer Disease, Early Onset", "Familial Alzheimer Disease (FAD)", "Dementia, Alzheimer (AD)", "Dementia, Senile", "Alzheimer Disease, Late Onset", "Dementia, Presenile", "Dementia, Primary Senile Degenerative"],
+                        "Semantic_Type": ["T047"],
+                        "Mesh_TreeNumber": "C10.574.945.249;C10.228.140.380.100;F03.615.400.100",
+                        "Source_id": "D000544",
+                        "Term": "Alzheimer Disease",
+                        "Source": "MeSH"
+                    },
+                    "id": "5245383"
+                }
+            }],
+            "length": 1
+        }],
+        "_fieldLookup": {
+            "p1": 0,
+            "p2": 1
+        }
+    }, {
+        "keys": ["p1", "p2"],
+        "length": 2,
+        "_fields": [{
+            "start": {
+                "identity": "6491719",
+                "labels": ["Plant"],
+                "properties": {
+                    "Synonyms": ["highbush blueberry", " American blueberry"],
+                    "Preferred_Term": "Vaccinium corymbosum",
+                    "Source_ID": "NCBI_TAXONOMY:69266",
+                    "Rank": "species",
+                    "Term": "Vaccinium corymbosum",
+                    "Source": "NCBI_Taxonomy"
+                },
+                "id": "6491719"
+            },
+            "end": {
+                "identity": "1085055",
+                "labels": ["Gene"],
+                "properties": {
+                    "Synonyms": ["FKBP4", "52 kDa FK506-binding protein", "52 kDa FKBP", "FK506 binding protein 4, 59kDa", "FK506-binding protein 4", "FKBP52 protein", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "p59 protein", "rotamase", "FKBP-4", "FKBP-52"],
+                    "Description": "FK506 binding protein 4",
+                    "GeneID": "ENTREZ:508535",
+                    "Source": "NCBI_Entrez_Gene"
+                },
+                "id": "1085055"
+            },
+            "segments": [{
+                "start": {
+                    "identity": "6491719",
+                    "labels": ["Plant"],
+                    "properties": {
+                        "Synonyms": ["highbush blueberry", " American blueberry"],
+                        "Preferred_Term": "Vaccinium corymbosum",
+                        "Source_ID": "NCBI_TAXONOMY:69266",
+                        "Rank": "species",
+                        "Term": "Vaccinium corymbosum",
+                        "Source": "NCBI_Taxonomy"
+                    },
+                    "id": "6491719"
+                },
+                "relationship": {
+                    "identity": "7523040",
+                    "start": "6491719",
+                    "end": "4903772",
+                    "type": "store",
+                    "properties": {
+                        "hit_text": "Quality of blueberry fruit /Vaccinium corymbosum L./ stored under LPS, CA, and normal air storage...",
+                        "source": "linguamatics_title",
+                        "doc_id": "IND92016423"
+                    },
+                    "id": "7523040",
+                    "startNode": "6491719",
+                    "endNode": "4903772"
+                },
+                "end": {
+                    "identity": "4903772",
+                    "labels": ["Chemical"],
+                    "properties": {
+                        "Synonyms": ["ChEBI:C00076 KEGG COMPOUND", "DrugBank:DB01373 DrugBank", "ChemIDplus:7440-70-2 CAS Registry Number", "WebElements:Ca WebElements", "calcium"],
+                        "Definition": "An alkaline earth metal atom that has formula Ca.",
+                        "Source_ID": "CHEBI:22984",
+                        "Source": "chebi_ontology",
+                        "Name": "calcium atom"
+                    },
+                    "id": "4903772"
+                }
+            }, {
+                "start": {
+                    "identity": "4903772",
+                    "labels": ["Chemical"],
+                    "properties": {
+                        "Synonyms": ["ChEBI:C00076 KEGG COMPOUND", "DrugBank:DB01373 DrugBank", "ChemIDplus:7440-70-2 CAS Registry Number", "WebElements:Ca WebElements", "calcium"],
+                        "Definition": "An alkaline earth metal atom that has formula Ca.",
+                        "Source_ID": "CHEBI:22984",
+                        "Source": "chebi_ontology",
+                        "Name": "calcium atom"
+                    },
+                    "id": "4903772"
+                },
+                "relationship": {
+                    "identity": "8006771",
+                    "start": "4903772",
+                    "end": "578961",
+                    "type": "upregul",
+                    "properties": {
+                        "hit_text": "These changes in [Ca(2+)](i) also upregulated the activity of the plasma membrane Ca(2+)-ATPase in a Ca(2+)-dependent manner, ...",
+                        "source": "linguamatics_abstract",
+                        "doc_id": "17494627"
+                    },
+                    "id": "8006771",
+                    "startNode": "4903772",
+                    "endNode": "578961"
+                },
+                "end": {
+                    "identity": "578961",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["ATP2B2", "ATP2B2", "ATPase, Ca++ transporting, plasma membrane 2", "plasma membrane Ca(2+)-ATPase", "plasma membrane Ca2+ pump 2", "plasma membrane calcium ATPase", "plasma membrane calcium pump", "PMCA2", "PMCA2a", "PMCA2i"],
+                        "Description": "ATPase plasma membrane Ca2+ transporting 2",
+                        "GeneID": "ENTREZ:491",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "578961"
+                }
+            }, {
+                "start": {
+                    "identity": "578961",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["ATP2B2", "ATP2B2", "ATPase, Ca++ transporting, plasma membrane 2", "plasma membrane Ca(2+)-ATPase", "plasma membrane Ca2+ pump 2", "plasma membrane calcium ATPase", "plasma membrane calcium pump", "PMCA2", "PMCA2a", "PMCA2i"],
+                        "Description": "ATPase plasma membrane Ca2+ transporting 2",
+                        "GeneID": "ENTREZ:491",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "578961"
+                },
+                "relationship": {
+                    "identity": "4440052",
+                    "start": "578961",
+                    "end": "4979869",
+                    "type": "performs",
+                    "properties": {
+                        "PubMedIDs": ["17689535", "12763866", "11274188", "11786550"],
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "4440052",
+                    "startNode": "578961",
+                    "endNode": "4979869"
+                },
+                "end": {
+                    "identity": "4979869",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Synonyms": ["Reactome:REACT_108283 Formation of the IGF:IGFBP-4 Complex, Xenopus tropicalis", "Reactome:REACT_79634 Formation of the IGF:IGFBP-5:ALS Complex, Canis familiaris", "Reactome:REACT_105776 Formation of the IGF:IGFBP-3:ALS Complex, Danio rerio", "Reactome:REACT_100287 Formation of the IGF:IGFBP-4 Complex, Canis familiaris", "Reactome:REACT_110419 Type II receptor recruits type I receptor, Bos taurus", "Reactome:REACT_88138 Formation of the IGF:IGFBP-5:ALS Complex, Danio rerio", "Reactome:REACT_15419 Formation of the IGF:IGFBP-2 Complex, Homo sapiens", "protein amino acid binding", "Reactome:REACT_90105 Formation of the IGF:IGFBP-1 Complex, Xenopus tropicalis", "Reactome:REACT_87187 An anchoring protein, SARA, recruits SMAD2/3, Xenopus tropicalis", "Reactome:REACT_15321 Formation of the IGF:IGFBP-1 Complex, Homo sapiens", "Reactome:REACT_80470 Formation of the IGF:IGFBP-1 Complex, Rattus norvegicus", "Reactome:REACT_90027 Formation of the IGF:IGFBP-2 Complex, Rattus norvegicus", "Reactome:REACT_98028 Formation of the IGF:IGFBP-1 Complex, Taeniopygia guttata", "Reactome:REACT_31537 Formation of the IGF:IGFBP-6 Complex, Rattus norvegicus", "Reactome:REACT_83165 Formation of the IGF:IGFBP-5:ALS Complex, Sus scrofa", "Reactome:REACT_103972 Type II receptor recruits type I receptor, Xenopus tropicalis", "Reactome:REACT_85975 An anchoring protein, SARA, recruits SMAD2/3, Danio rerio", "Reactome:REACT_93175 Formation of the IGF:IGFBP-1 Complex, Gallus gallus", "Reactome:REACT_78466 Formation of the IGF:IGFBP-6 Complex, Canis familiaris", "Reactome:REACT_31641 Type II receptor recruits type I receptor, Danio rerio", "Reactome:REACT_34719 Formation of the IGF:IGFBP-1 Complex, Danio rerio", "Reactome:REACT_109392 Formation of the IGF:IGFBP-3:ALS Complex, Gallus gallus", "Reactome:REACT_80778 Type II receptor recruits type I receptor, Mus musculus", "Reactome:REACT_104599 Type II receptor recruits type I receptor, Sus scrofa", "Reactome:REACT_88068 Formation of the IGF:IGFBP-3:ALS Complex, Canis familiaris", "Reactome:REACT_85250 Formation of the IGF:IGFBP-2 Complex, Canis familiaris", "Reactome:REACT_101129 Formation of the IGF:IGFBP-3:ALS Complex, Rattus norvegicus", "Reactome:REACT_31648 An anchoring protein, SARA, recruits SMAD2/3, Mus musculus", "Reactome:REACT_20539 Traversal of the cortical actin network., Mus musculus", "Reactome:REACT_15325 Formation of the IGF:IGFBP-4 Complex, Homo sapiens", "Reactome:REACT_32973 Formation of the IGF:IGFBP-1 Complex, Canis familiaris", "Reactome:REACT_96264 Formation of the IGF:IGFBP-2 Complex, Danio rerio", "Reactome:REACT_104029 Formation of the IGF:IGFBP-6 Complex, Bos taurus", "Reactome:REACT_105895 Formation of the IGF:IGFBP-4 Complex, Bos taurus", "Reactome:REACT_106168 Formation of the IGF:IGFBP-2 Complex, Bos taurus", "Reactome:REACT_28794 Formation of the IGF:IGFBP-4 Complex, Sus scrofa", "Reactome:REACT_91560 Type II receptor recruits type I receptor, Canis familiaris", "Reactome:REACT_102457 An anchoring protein, SARA, recruits SMAD2/3, Canis familiaris", "Reactome:REACT_6945 Type II receptor recruits type I receptor, Homo sapiens", "Reactome:REACT_87652 Formation of the IGF:IGFBP-5:ALS Complex, Bos taurus", "Reactome:REACT_6923 An anchoring protein, SARA, recruits SMAD2/3, Homo sapiens", "Reactome:REACT_89261 Formation of the IGF:IGFBP-4 Complex, Taeniopygia guttata", "Reactome:REACT_20509 Exocytosis of Insulin, Mus musculus", "Reactome:REACT_30672 Formation of the IGF:IGFBP-2 Complex, Taeniopygia guttata", "Reactome:REACT_92029 Formation of the IGF:IGFBP-4 Complex, Rattus norvegicus", "Reactome:REACT_83532 Formation of the IGF:IGFBP-2 Complex, Xenopus tropicalis", "Reactome:REACT_107402 Formation of the IGF:IGFBP-4 Complex, Mus musculus", "Reactome:REACT_78382 Formation of the IGF:IGFBP-1 Complex, Mus musculus", "Reactome:REACT_106189 Formation of the IGF:IGFBP-5:ALS Complex, Gallus gallus", "Reactome:REACT_96236 Formation of the IGF:IGFBP-2 Complex, Mus musculus", "Reactome:REACT_95647 Formation of the IGF:IGFBP-3:ALS Complex, Bos taurus", "Reactome:REACT_31305 Formation of the IGF:IGFBP-3:ALS Complex, Taeniopygia guttata", "Reactome:REACT_15506 Formation of the IGF:IGFBP-6 Complex, Homo sapiens", "Reactome:REACT_94522 Formation of the IGF:IGFBP-5:ALS Complex, Taeniopygia guttata", "Reactome:REACT_95561 Formation of the IGF:IGFBP-5:ALS Complex, Xenopus tropicalis", "Reactome:REACT_85858 Formation of the IGF:IGFBP-2 Complex, Gallus gallus", "Reactome:REACT_88223 Formation of the IGF:IGFBP-1 Complex, Sus scrofa", "Reactome:REACT_30571 Formation of the IGF:IGFBP-6 Complex, Danio rerio", "Reactome:REACT_83147 Type II receptor recruits type I receptor, Rattus norvegicus", "Reactome:REACT_90666 An anchoring protein, SARA, recruits SMAD2/3, Sus scrofa", "Reactome:REACT_102084 Formation of the IGF:IGFBP-5:ALS Complex, Mus musculus", "Reactome:REACT_95241 Formation of the IGF:IGFBP-3:ALS Complex, Mus musculus", "Reactome:REACT_15541 Traversal of the cortical actin network and docking at plasma membrane, Homo sapiens", "Reactome:REACT_15355 Formation of the IGF:IGFBP-5:ALS Complex, Homo sapiens", "Reactome:REACT_87374 Formation of the IGF:IGFBP-6 Complex, Sus scrofa", "Reactome:REACT_93938 Formation of the IGF:IGFBP-5:ALS Complex, Rattus norvegicus", "Reactome:REACT_15417 Formation of the IGF:IGFBP-3:ALS Complex, Homo sapiens", "Reactome:REACT_98807 An anchoring protein, SARA, recruits SMAD2/3, Bos taurus", "Reactome:REACT_33135 An anchoring protein, SARA, recruits SMAD2/3, Rattus norvegicus", "Reactome:REACT_94808 Formation of the IGF:IGFBP-6 Complex, Mus musculus", "Reactome:REACT_110570 Formation of the IGF:IGFBP-3:ALS Complex, Sus scrofa"],
+                        "Definition": "Interacting selectively and non-covalently with any protein or protein complex (a complex of two or more proteins that may include other nonprotein molecules).",
+                        "Source_ID": "GO:0005515",
+                        "Source": "gene_ontology",
+                        "Name": "protein binding"
+                    },
+                    "id": "4979869"
+                }
+            }, {
+                "start": {
+                    "identity": "4979869",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Synonyms": ["Reactome:REACT_108283 Formation of the IGF:IGFBP-4 Complex, Xenopus tropicalis", "Reactome:REACT_79634 Formation of the IGF:IGFBP-5:ALS Complex, Canis familiaris", "Reactome:REACT_105776 Formation of the IGF:IGFBP-3:ALS Complex, Danio rerio", "Reactome:REACT_100287 Formation of the IGF:IGFBP-4 Complex, Canis familiaris", "Reactome:REACT_110419 Type II receptor recruits type I receptor, Bos taurus", "Reactome:REACT_88138 Formation of the IGF:IGFBP-5:ALS Complex, Danio rerio", "Reactome:REACT_15419 Formation of the IGF:IGFBP-2 Complex, Homo sapiens", "protein amino acid binding", "Reactome:REACT_90105 Formation of the IGF:IGFBP-1 Complex, Xenopus tropicalis", "Reactome:REACT_87187 An anchoring protein, SARA, recruits SMAD2/3, Xenopus tropicalis", "Reactome:REACT_15321 Formation of the IGF:IGFBP-1 Complex, Homo sapiens", "Reactome:REACT_80470 Formation of the IGF:IGFBP-1 Complex, Rattus norvegicus", "Reactome:REACT_90027 Formation of the IGF:IGFBP-2 Complex, Rattus norvegicus", "Reactome:REACT_98028 Formation of the IGF:IGFBP-1 Complex, Taeniopygia guttata", "Reactome:REACT_31537 Formation of the IGF:IGFBP-6 Complex, Rattus norvegicus", "Reactome:REACT_83165 Formation of the IGF:IGFBP-5:ALS Complex, Sus scrofa", "Reactome:REACT_103972 Type II receptor recruits type I receptor, Xenopus tropicalis", "Reactome:REACT_85975 An anchoring protein, SARA, recruits SMAD2/3, Danio rerio", "Reactome:REACT_93175 Formation of the IGF:IGFBP-1 Complex, Gallus gallus", "Reactome:REACT_78466 Formation of the IGF:IGFBP-6 Complex, Canis familiaris", "Reactome:REACT_31641 Type II receptor recruits type I receptor, Danio rerio", "Reactome:REACT_34719 Formation of the IGF:IGFBP-1 Complex, Danio rerio", "Reactome:REACT_109392 Formation of the IGF:IGFBP-3:ALS Complex, Gallus gallus", "Reactome:REACT_80778 Type II receptor recruits type I receptor, Mus musculus", "Reactome:REACT_104599 Type II receptor recruits type I receptor, Sus scrofa", "Reactome:REACT_88068 Formation of the IGF:IGFBP-3:ALS Complex, Canis familiaris", "Reactome:REACT_85250 Formation of the IGF:IGFBP-2 Complex, Canis familiaris", "Reactome:REACT_101129 Formation of the IGF:IGFBP-3:ALS Complex, Rattus norvegicus", "Reactome:REACT_31648 An anchoring protein, SARA, recruits SMAD2/3, Mus musculus", "Reactome:REACT_20539 Traversal of the cortical actin network., Mus musculus", "Reactome:REACT_15325 Formation of the IGF:IGFBP-4 Complex, Homo sapiens", "Reactome:REACT_32973 Formation of the IGF:IGFBP-1 Complex, Canis familiaris", "Reactome:REACT_96264 Formation of the IGF:IGFBP-2 Complex, Danio rerio", "Reactome:REACT_104029 Formation of the IGF:IGFBP-6 Complex, Bos taurus", "Reactome:REACT_105895 Formation of the IGF:IGFBP-4 Complex, Bos taurus", "Reactome:REACT_106168 Formation of the IGF:IGFBP-2 Complex, Bos taurus", "Reactome:REACT_28794 Formation of the IGF:IGFBP-4 Complex, Sus scrofa", "Reactome:REACT_91560 Type II receptor recruits type I receptor, Canis familiaris", "Reactome:REACT_102457 An anchoring protein, SARA, recruits SMAD2/3, Canis familiaris", "Reactome:REACT_6945 Type II receptor recruits type I receptor, Homo sapiens", "Reactome:REACT_87652 Formation of the IGF:IGFBP-5:ALS Complex, Bos taurus", "Reactome:REACT_6923 An anchoring protein, SARA, recruits SMAD2/3, Homo sapiens", "Reactome:REACT_89261 Formation of the IGF:IGFBP-4 Complex, Taeniopygia guttata", "Reactome:REACT_20509 Exocytosis of Insulin, Mus musculus", "Reactome:REACT_30672 Formation of the IGF:IGFBP-2 Complex, Taeniopygia guttata", "Reactome:REACT_92029 Formation of the IGF:IGFBP-4 Complex, Rattus norvegicus", "Reactome:REACT_83532 Formation of the IGF:IGFBP-2 Complex, Xenopus tropicalis", "Reactome:REACT_107402 Formation of the IGF:IGFBP-4 Complex, Mus musculus", "Reactome:REACT_78382 Formation of the IGF:IGFBP-1 Complex, Mus musculus", "Reactome:REACT_106189 Formation of the IGF:IGFBP-5:ALS Complex, Gallus gallus", "Reactome:REACT_96236 Formation of the IGF:IGFBP-2 Complex, Mus musculus", "Reactome:REACT_95647 Formation of the IGF:IGFBP-3:ALS Complex, Bos taurus", "Reactome:REACT_31305 Formation of the IGF:IGFBP-3:ALS Complex, Taeniopygia guttata", "Reactome:REACT_15506 Formation of the IGF:IGFBP-6 Complex, Homo sapiens", "Reactome:REACT_94522 Formation of the IGF:IGFBP-5:ALS Complex, Taeniopygia guttata", "Reactome:REACT_95561 Formation of the IGF:IGFBP-5:ALS Complex, Xenopus tropicalis", "Reactome:REACT_85858 Formation of the IGF:IGFBP-2 Complex, Gallus gallus", "Reactome:REACT_88223 Formation of the IGF:IGFBP-1 Complex, Sus scrofa", "Reactome:REACT_30571 Formation of the IGF:IGFBP-6 Complex, Danio rerio", "Reactome:REACT_83147 Type II receptor recruits type I receptor, Rattus norvegicus", "Reactome:REACT_90666 An anchoring protein, SARA, recruits SMAD2/3, Sus scrofa", "Reactome:REACT_102084 Formation of the IGF:IGFBP-5:ALS Complex, Mus musculus", "Reactome:REACT_95241 Formation of the IGF:IGFBP-3:ALS Complex, Mus musculus", "Reactome:REACT_15541 Traversal of the cortical actin network and docking at plasma membrane, Homo sapiens", "Reactome:REACT_15355 Formation of the IGF:IGFBP-5:ALS Complex, Homo sapiens", "Reactome:REACT_87374 Formation of the IGF:IGFBP-6 Complex, Sus scrofa", "Reactome:REACT_93938 Formation of the IGF:IGFBP-5:ALS Complex, Rattus norvegicus", "Reactome:REACT_15417 Formation of the IGF:IGFBP-3:ALS Complex, Homo sapiens", "Reactome:REACT_98807 An anchoring protein, SARA, recruits SMAD2/3, Bos taurus", "Reactome:REACT_33135 An anchoring protein, SARA, recruits SMAD2/3, Rattus norvegicus", "Reactome:REACT_94808 Formation of the IGF:IGFBP-6 Complex, Mus musculus", "Reactome:REACT_110570 Formation of the IGF:IGFBP-3:ALS Complex, Sus scrofa"],
+                        "Definition": "Interacting selectively and non-covalently with any protein or protein complex (a complex of two or more proteins that may include other nonprotein molecules).",
+                        "Source_ID": "GO:0005515",
+                        "Source": "gene_ontology",
+                        "Name": "protein binding"
+                    },
+                    "id": "4979869"
+                },
+                "relationship": {
+                    "identity": "4357376",
+                    "start": "1085055",
+                    "end": "4979869",
+                    "type": "performs",
+                    "properties": {
+                        "PubMedIDs": ["14638689"],
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "4357376",
+                    "startNode": "1085055",
+                    "endNode": "4979869"
+                },
+                "end": {
+                    "identity": "1085055",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["FKBP4", "52 kDa FK506-binding protein", "52 kDa FKBP", "FK506 binding protein 4, 59kDa", "FK506-binding protein 4", "FKBP52 protein", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "p59 protein", "rotamase", "FKBP-4", "FKBP-52"],
+                        "Description": "FK506 binding protein 4",
+                        "GeneID": "ENTREZ:508535",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "1085055"
+                }
+            }],
+            "length": 4
+        }, {
+            "start": {
+                "identity": "1085055",
+                "labels": ["Gene"],
+                "properties": {
+                    "Synonyms": ["FKBP4", "52 kDa FK506-binding protein", "52 kDa FKBP", "FK506 binding protein 4, 59kDa", "FK506-binding protein 4", "FKBP52 protein", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "p59 protein", "rotamase", "FKBP-4", "FKBP-52"],
+                    "Description": "FK506 binding protein 4",
+                    "GeneID": "ENTREZ:508535",
+                    "Source": "NCBI_Entrez_Gene"
+                },
+                "id": "1085055"
+            },
+            "end": {
+                "identity": "5245383",
+                "labels": ["Medical_Heading"],
+                "properties": {
+                    "Synonyms": ["Focal Onset Alzheimer's Disease", "Alzheimer Type Dementia", "Senile Dementia, Acute Confusional", "Dementia, Alzheimer Type", "Disease, Alzheimer", "Alzheimer's Disease, Focal Onset", "Primary Senile Degenerative Dementia", "Alzheimer Sclerosis", "Alzheimer Type Senile Dementia", "Syndrome, Alzheimer", "Senile Dementia", "Sclerosis, Alzheimer", "Dementia, Alzheimer-Type (ATD)", "Alzheimer-Type Dementia (ATD)", "Disease, Alzheimer's", "Alzheimer Syndrome", "Alzheimer Type Dementia (ATD)", "Presenile Dementia", "Alzheimer's Disease", "Acute Confusional Senile Dementia", "Early Onset Alzheimer Disease", "Alzheimer Dementia (AD)", "Senile Dementia, Alzheimer Type", "Late Onset Alzheimer Disease", "Presenile Alzheimer Dementia", "Alzheimer Disease, Early Onset", "Familial Alzheimer Disease (FAD)", "Dementia, Alzheimer (AD)", "Dementia, Senile", "Alzheimer Disease, Late Onset", "Dementia, Presenile", "Dementia, Primary Senile Degenerative"],
+                    "Semantic_Type": ["T047"],
+                    "Mesh_TreeNumber": "C10.574.945.249;C10.228.140.380.100;F03.615.400.100",
+                    "Source_id": "D000544",
+                    "Term": "Alzheimer Disease",
+                    "Source": "MeSH"
+                },
+                "id": "5245383"
+            },
+            "segments": [{
+                "start": {
+                    "identity": "1085055",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["FKBP4", "52 kDa FK506-binding protein", "52 kDa FKBP", "FK506 binding protein 4, 59kDa", "FK506-binding protein 4", "FKBP52 protein", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "p59 protein", "rotamase", "FKBP-4", "FKBP-52"],
+                        "Description": "FK506 binding protein 4",
+                        "GeneID": "ENTREZ:508535",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "1085055"
+                },
+                "relationship": {
+                    "identity": "4357376",
+                    "start": "1085055",
+                    "end": "4979869",
+                    "type": "performs",
+                    "properties": {
+                        "PubMedIDs": ["14638689"],
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "4357376",
+                    "startNode": "1085055",
+                    "endNode": "4979869"
+                },
+                "end": {
+                    "identity": "4979869",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Synonyms": ["Reactome:REACT_108283 Formation of the IGF:IGFBP-4 Complex, Xenopus tropicalis", "Reactome:REACT_79634 Formation of the IGF:IGFBP-5:ALS Complex, Canis familiaris", "Reactome:REACT_105776 Formation of the IGF:IGFBP-3:ALS Complex, Danio rerio", "Reactome:REACT_100287 Formation of the IGF:IGFBP-4 Complex, Canis familiaris", "Reactome:REACT_110419 Type II receptor recruits type I receptor, Bos taurus", "Reactome:REACT_88138 Formation of the IGF:IGFBP-5:ALS Complex, Danio rerio", "Reactome:REACT_15419 Formation of the IGF:IGFBP-2 Complex, Homo sapiens", "protein amino acid binding", "Reactome:REACT_90105 Formation of the IGF:IGFBP-1 Complex, Xenopus tropicalis", "Reactome:REACT_87187 An anchoring protein, SARA, recruits SMAD2/3, Xenopus tropicalis", "Reactome:REACT_15321 Formation of the IGF:IGFBP-1 Complex, Homo sapiens", "Reactome:REACT_80470 Formation of the IGF:IGFBP-1 Complex, Rattus norvegicus", "Reactome:REACT_90027 Formation of the IGF:IGFBP-2 Complex, Rattus norvegicus", "Reactome:REACT_98028 Formation of the IGF:IGFBP-1 Complex, Taeniopygia guttata", "Reactome:REACT_31537 Formation of the IGF:IGFBP-6 Complex, Rattus norvegicus", "Reactome:REACT_83165 Formation of the IGF:IGFBP-5:ALS Complex, Sus scrofa", "Reactome:REACT_103972 Type II receptor recruits type I receptor, Xenopus tropicalis", "Reactome:REACT_85975 An anchoring protein, SARA, recruits SMAD2/3, Danio rerio", "Reactome:REACT_93175 Formation of the IGF:IGFBP-1 Complex, Gallus gallus", "Reactome:REACT_78466 Formation of the IGF:IGFBP-6 Complex, Canis familiaris", "Reactome:REACT_31641 Type II receptor recruits type I receptor, Danio rerio", "Reactome:REACT_34719 Formation of the IGF:IGFBP-1 Complex, Danio rerio", "Reactome:REACT_109392 Formation of the IGF:IGFBP-3:ALS Complex, Gallus gallus", "Reactome:REACT_80778 Type II receptor recruits type I receptor, Mus musculus", "Reactome:REACT_104599 Type II receptor recruits type I receptor, Sus scrofa", "Reactome:REACT_88068 Formation of the IGF:IGFBP-3:ALS Complex, Canis familiaris", "Reactome:REACT_85250 Formation of the IGF:IGFBP-2 Complex, Canis familiaris", "Reactome:REACT_101129 Formation of the IGF:IGFBP-3:ALS Complex, Rattus norvegicus", "Reactome:REACT_31648 An anchoring protein, SARA, recruits SMAD2/3, Mus musculus", "Reactome:REACT_20539 Traversal of the cortical actin network., Mus musculus", "Reactome:REACT_15325 Formation of the IGF:IGFBP-4 Complex, Homo sapiens", "Reactome:REACT_32973 Formation of the IGF:IGFBP-1 Complex, Canis familiaris", "Reactome:REACT_96264 Formation of the IGF:IGFBP-2 Complex, Danio rerio", "Reactome:REACT_104029 Formation of the IGF:IGFBP-6 Complex, Bos taurus", "Reactome:REACT_105895 Formation of the IGF:IGFBP-4 Complex, Bos taurus", "Reactome:REACT_106168 Formation of the IGF:IGFBP-2 Complex, Bos taurus", "Reactome:REACT_28794 Formation of the IGF:IGFBP-4 Complex, Sus scrofa", "Reactome:REACT_91560 Type II receptor recruits type I receptor, Canis familiaris", "Reactome:REACT_102457 An anchoring protein, SARA, recruits SMAD2/3, Canis familiaris", "Reactome:REACT_6945 Type II receptor recruits type I receptor, Homo sapiens", "Reactome:REACT_87652 Formation of the IGF:IGFBP-5:ALS Complex, Bos taurus", "Reactome:REACT_6923 An anchoring protein, SARA, recruits SMAD2/3, Homo sapiens", "Reactome:REACT_89261 Formation of the IGF:IGFBP-4 Complex, Taeniopygia guttata", "Reactome:REACT_20509 Exocytosis of Insulin, Mus musculus", "Reactome:REACT_30672 Formation of the IGF:IGFBP-2 Complex, Taeniopygia guttata", "Reactome:REACT_92029 Formation of the IGF:IGFBP-4 Complex, Rattus norvegicus", "Reactome:REACT_83532 Formation of the IGF:IGFBP-2 Complex, Xenopus tropicalis", "Reactome:REACT_107402 Formation of the IGF:IGFBP-4 Complex, Mus musculus", "Reactome:REACT_78382 Formation of the IGF:IGFBP-1 Complex, Mus musculus", "Reactome:REACT_106189 Formation of the IGF:IGFBP-5:ALS Complex, Gallus gallus", "Reactome:REACT_96236 Formation of the IGF:IGFBP-2 Complex, Mus musculus", "Reactome:REACT_95647 Formation of the IGF:IGFBP-3:ALS Complex, Bos taurus", "Reactome:REACT_31305 Formation of the IGF:IGFBP-3:ALS Complex, Taeniopygia guttata", "Reactome:REACT_15506 Formation of the IGF:IGFBP-6 Complex, Homo sapiens", "Reactome:REACT_94522 Formation of the IGF:IGFBP-5:ALS Complex, Taeniopygia guttata", "Reactome:REACT_95561 Formation of the IGF:IGFBP-5:ALS Complex, Xenopus tropicalis", "Reactome:REACT_85858 Formation of the IGF:IGFBP-2 Complex, Gallus gallus", "Reactome:REACT_88223 Formation of the IGF:IGFBP-1 Complex, Sus scrofa", "Reactome:REACT_30571 Formation of the IGF:IGFBP-6 Complex, Danio rerio", "Reactome:REACT_83147 Type II receptor recruits type I receptor, Rattus norvegicus", "Reactome:REACT_90666 An anchoring protein, SARA, recruits SMAD2/3, Sus scrofa", "Reactome:REACT_102084 Formation of the IGF:IGFBP-5:ALS Complex, Mus musculus", "Reactome:REACT_95241 Formation of the IGF:IGFBP-3:ALS Complex, Mus musculus", "Reactome:REACT_15541 Traversal of the cortical actin network and docking at plasma membrane, Homo sapiens", "Reactome:REACT_15355 Formation of the IGF:IGFBP-5:ALS Complex, Homo sapiens", "Reactome:REACT_87374 Formation of the IGF:IGFBP-6 Complex, Sus scrofa", "Reactome:REACT_93938 Formation of the IGF:IGFBP-5:ALS Complex, Rattus norvegicus", "Reactome:REACT_15417 Formation of the IGF:IGFBP-3:ALS Complex, Homo sapiens", "Reactome:REACT_98807 An anchoring protein, SARA, recruits SMAD2/3, Bos taurus", "Reactome:REACT_33135 An anchoring protein, SARA, recruits SMAD2/3, Rattus norvegicus", "Reactome:REACT_94808 Formation of the IGF:IGFBP-6 Complex, Mus musculus", "Reactome:REACT_110570 Formation of the IGF:IGFBP-3:ALS Complex, Sus scrofa"],
+                        "Definition": "Interacting selectively and non-covalently with any protein or protein complex (a complex of two or more proteins that may include other nonprotein molecules).",
+                        "Source_ID": "GO:0005515",
+                        "Source": "gene_ontology",
+                        "Name": "protein binding"
+                    },
+                    "id": "4979869"
+                }
+            }, {
+                "start": {
+                    "identity": "4979869",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Synonyms": ["Reactome:REACT_108283 Formation of the IGF:IGFBP-4 Complex, Xenopus tropicalis", "Reactome:REACT_79634 Formation of the IGF:IGFBP-5:ALS Complex, Canis familiaris", "Reactome:REACT_105776 Formation of the IGF:IGFBP-3:ALS Complex, Danio rerio", "Reactome:REACT_100287 Formation of the IGF:IGFBP-4 Complex, Canis familiaris", "Reactome:REACT_110419 Type II receptor recruits type I receptor, Bos taurus", "Reactome:REACT_88138 Formation of the IGF:IGFBP-5:ALS Complex, Danio rerio", "Reactome:REACT_15419 Formation of the IGF:IGFBP-2 Complex, Homo sapiens", "protein amino acid binding", "Reactome:REACT_90105 Formation of the IGF:IGFBP-1 Complex, Xenopus tropicalis", "Reactome:REACT_87187 An anchoring protein, SARA, recruits SMAD2/3, Xenopus tropicalis", "Reactome:REACT_15321 Formation of the IGF:IGFBP-1 Complex, Homo sapiens", "Reactome:REACT_80470 Formation of the IGF:IGFBP-1 Complex, Rattus norvegicus", "Reactome:REACT_90027 Formation of the IGF:IGFBP-2 Complex, Rattus norvegicus", "Reactome:REACT_98028 Formation of the IGF:IGFBP-1 Complex, Taeniopygia guttata", "Reactome:REACT_31537 Formation of the IGF:IGFBP-6 Complex, Rattus norvegicus", "Reactome:REACT_83165 Formation of the IGF:IGFBP-5:ALS Complex, Sus scrofa", "Reactome:REACT_103972 Type II receptor recruits type I receptor, Xenopus tropicalis", "Reactome:REACT_85975 An anchoring protein, SARA, recruits SMAD2/3, Danio rerio", "Reactome:REACT_93175 Formation of the IGF:IGFBP-1 Complex, Gallus gallus", "Reactome:REACT_78466 Formation of the IGF:IGFBP-6 Complex, Canis familiaris", "Reactome:REACT_31641 Type II receptor recruits type I receptor, Danio rerio", "Reactome:REACT_34719 Formation of the IGF:IGFBP-1 Complex, Danio rerio", "Reactome:REACT_109392 Formation of the IGF:IGFBP-3:ALS Complex, Gallus gallus", "Reactome:REACT_80778 Type II receptor recruits type I receptor, Mus musculus", "Reactome:REACT_104599 Type II receptor recruits type I receptor, Sus scrofa", "Reactome:REACT_88068 Formation of the IGF:IGFBP-3:ALS Complex, Canis familiaris", "Reactome:REACT_85250 Formation of the IGF:IGFBP-2 Complex, Canis familiaris", "Reactome:REACT_101129 Formation of the IGF:IGFBP-3:ALS Complex, Rattus norvegicus", "Reactome:REACT_31648 An anchoring protein, SARA, recruits SMAD2/3, Mus musculus", "Reactome:REACT_20539 Traversal of the cortical actin network., Mus musculus", "Reactome:REACT_15325 Formation of the IGF:IGFBP-4 Complex, Homo sapiens", "Reactome:REACT_32973 Formation of the IGF:IGFBP-1 Complex, Canis familiaris", "Reactome:REACT_96264 Formation of the IGF:IGFBP-2 Complex, Danio rerio", "Reactome:REACT_104029 Formation of the IGF:IGFBP-6 Complex, Bos taurus", "Reactome:REACT_105895 Formation of the IGF:IGFBP-4 Complex, Bos taurus", "Reactome:REACT_106168 Formation of the IGF:IGFBP-2 Complex, Bos taurus", "Reactome:REACT_28794 Formation of the IGF:IGFBP-4 Complex, Sus scrofa", "Reactome:REACT_91560 Type II receptor recruits type I receptor, Canis familiaris", "Reactome:REACT_102457 An anchoring protein, SARA, recruits SMAD2/3, Canis familiaris", "Reactome:REACT_6945 Type II receptor recruits type I receptor, Homo sapiens", "Reactome:REACT_87652 Formation of the IGF:IGFBP-5:ALS Complex, Bos taurus", "Reactome:REACT_6923 An anchoring protein, SARA, recruits SMAD2/3, Homo sapiens", "Reactome:REACT_89261 Formation of the IGF:IGFBP-4 Complex, Taeniopygia guttata", "Reactome:REACT_20509 Exocytosis of Insulin, Mus musculus", "Reactome:REACT_30672 Formation of the IGF:IGFBP-2 Complex, Taeniopygia guttata", "Reactome:REACT_92029 Formation of the IGF:IGFBP-4 Complex, Rattus norvegicus", "Reactome:REACT_83532 Formation of the IGF:IGFBP-2 Complex, Xenopus tropicalis", "Reactome:REACT_107402 Formation of the IGF:IGFBP-4 Complex, Mus musculus", "Reactome:REACT_78382 Formation of the IGF:IGFBP-1 Complex, Mus musculus", "Reactome:REACT_106189 Formation of the IGF:IGFBP-5:ALS Complex, Gallus gallus", "Reactome:REACT_96236 Formation of the IGF:IGFBP-2 Complex, Mus musculus", "Reactome:REACT_95647 Formation of the IGF:IGFBP-3:ALS Complex, Bos taurus", "Reactome:REACT_31305 Formation of the IGF:IGFBP-3:ALS Complex, Taeniopygia guttata", "Reactome:REACT_15506 Formation of the IGF:IGFBP-6 Complex, Homo sapiens", "Reactome:REACT_94522 Formation of the IGF:IGFBP-5:ALS Complex, Taeniopygia guttata", "Reactome:REACT_95561 Formation of the IGF:IGFBP-5:ALS Complex, Xenopus tropicalis", "Reactome:REACT_85858 Formation of the IGF:IGFBP-2 Complex, Gallus gallus", "Reactome:REACT_88223 Formation of the IGF:IGFBP-1 Complex, Sus scrofa", "Reactome:REACT_30571 Formation of the IGF:IGFBP-6 Complex, Danio rerio", "Reactome:REACT_83147 Type II receptor recruits type I receptor, Rattus norvegicus", "Reactome:REACT_90666 An anchoring protein, SARA, recruits SMAD2/3, Sus scrofa", "Reactome:REACT_102084 Formation of the IGF:IGFBP-5:ALS Complex, Mus musculus", "Reactome:REACT_95241 Formation of the IGF:IGFBP-3:ALS Complex, Mus musculus", "Reactome:REACT_15541 Traversal of the cortical actin network and docking at plasma membrane, Homo sapiens", "Reactome:REACT_15355 Formation of the IGF:IGFBP-5:ALS Complex, Homo sapiens", "Reactome:REACT_87374 Formation of the IGF:IGFBP-6 Complex, Sus scrofa", "Reactome:REACT_93938 Formation of the IGF:IGFBP-5:ALS Complex, Rattus norvegicus", "Reactome:REACT_15417 Formation of the IGF:IGFBP-3:ALS Complex, Homo sapiens", "Reactome:REACT_98807 An anchoring protein, SARA, recruits SMAD2/3, Bos taurus", "Reactome:REACT_33135 An anchoring protein, SARA, recruits SMAD2/3, Rattus norvegicus", "Reactome:REACT_94808 Formation of the IGF:IGFBP-6 Complex, Mus musculus", "Reactome:REACT_110570 Formation of the IGF:IGFBP-3:ALS Complex, Sus scrofa"],
+                        "Definition": "Interacting selectively and non-covalently with any protein or protein complex (a complex of two or more proteins that may include other nonprotein molecules).",
+                        "Source_ID": "GO:0005515",
+                        "Source": "gene_ontology",
+                        "Name": "protein binding"
+                    },
+                    "id": "4979869"
+                },
+                "relationship": {
+                    "identity": "4244411",
+                    "start": "578561",
+                    "end": "4979869",
+                    "type": "performs",
+                    "properties": {
+                        "PubMedIDs": ["15469992", "16192269", "16443932", "12084722", "23931754"],
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "4244411",
+                    "startNode": "578561",
+                    "endNode": "4979869"
+                },
+                "end": {
+                    "identity": "578561",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["ABCA1", "ABCA1", "ATP-binding cassette transporter A1", "ATP-binding cassette, sub-family A (ABC1), member 1", "cholesterol efflux regulatory protein", "membrane-bound", "ABC-1", "ABC1", "CERP", "HDLDT1", "TGD"],
+                        "Description": "ATP binding cassette subfamily A member 1",
+                        "GeneID": "ENTREZ:19",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "578561"
+                }
+            }, {
+                "start": {
+                    "identity": "578561",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["ABCA1", "ABCA1", "ATP-binding cassette transporter A1", "ATP-binding cassette, sub-family A (ABC1), member 1", "cholesterol efflux regulatory protein", "membrane-bound", "ABC-1", "ABC1", "CERP", "HDLDT1", "TGD"],
+                        "Description": "ATP binding cassette subfamily A member 1",
+                        "GeneID": "ENTREZ:19",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "578561"
+                },
+                "relationship": {
+                    "identity": "7695257",
+                    "start": "578561",
+                    "end": "5245383",
+                    "type": "beta-amyloid",
+                    "properties": {
+                        "hit_text": "The role of ABCB1 and ABCA1 in beta-amyloid clearance at the neurovascular unit in Alzheimer's disease.",
+                        "source": "linguamatics_title",
+                        "doc_id": "23494712"
+                    },
+                    "id": "7695257",
+                    "startNode": "578561",
+                    "endNode": "5245383"
+                },
+                "end": {
+                    "identity": "5245383",
+                    "labels": ["Medical_Heading"],
+                    "properties": {
+                        "Synonyms": ["Focal Onset Alzheimer's Disease", "Alzheimer Type Dementia", "Senile Dementia, Acute Confusional", "Dementia, Alzheimer Type", "Disease, Alzheimer", "Alzheimer's Disease, Focal Onset", "Primary Senile Degenerative Dementia", "Alzheimer Sclerosis", "Alzheimer Type Senile Dementia", "Syndrome, Alzheimer", "Senile Dementia", "Sclerosis, Alzheimer", "Dementia, Alzheimer-Type (ATD)", "Alzheimer-Type Dementia (ATD)", "Disease, Alzheimer's", "Alzheimer Syndrome", "Alzheimer Type Dementia (ATD)", "Presenile Dementia", "Alzheimer's Disease", "Acute Confusional Senile Dementia", "Early Onset Alzheimer Disease", "Alzheimer Dementia (AD)", "Senile Dementia, Alzheimer Type", "Late Onset Alzheimer Disease", "Presenile Alzheimer Dementia", "Alzheimer Disease, Early Onset", "Familial Alzheimer Disease (FAD)", "Dementia, Alzheimer (AD)", "Dementia, Senile", "Alzheimer Disease, Late Onset", "Dementia, Presenile", "Dementia, Primary Senile Degenerative"],
+                        "Semantic_Type": ["T047"],
+                        "Mesh_TreeNumber": "C10.574.945.249;C10.228.140.380.100;F03.615.400.100",
+                        "Source_id": "D000544",
+                        "Term": "Alzheimer Disease",
+                        "Source": "MeSH"
+                    },
+                    "id": "5245383"
+                }
+            }],
+            "length": 3
+        }],
+        "_fieldLookup": {
+            "p1": 0,
+            "p2": 1
+        }
+    }, {
+        "keys": ["p1", "p2"],
+        "length": 2,
+        "_fields": [{
+            "start": {
+                "identity": "6491719",
+                "labels": ["Plant"],
+                "properties": {
+                    "Synonyms": ["highbush blueberry", " American blueberry"],
+                    "Preferred_Term": "Vaccinium corymbosum",
+                    "Source_ID": "NCBI_TAXONOMY:69266",
+                    "Rank": "species",
+                    "Term": "Vaccinium corymbosum",
+                    "Source": "NCBI_Taxonomy"
+                },
+                "id": "6491719"
+            },
+            "end": {
+                "identity": "1349243",
+                "labels": ["Gene"],
+                "properties": {
+                    "Synonyms": ["Fkbp4", "Fkbp4", "52 kDa FK506-binding protein", "52 kDa FKBP", "59 kDa immunophilin", "FK506-binding protein 4", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "rotamase", "59kDa", "AL022792", "AW208983", "FKBP-4", "FKBP-52", "FKBP52", "FKPB52", "p59"],
+                    "Description": "FK506 binding protein 4",
+                    "GeneID": "ENTREZ:14228",
+                    "Source": "NCBI_Entrez_Gene"
+                },
+                "id": "1349243"
+            },
+            "segments": [{
+                "start": {
+                    "identity": "6491719",
+                    "labels": ["Plant"],
+                    "properties": {
+                        "Synonyms": ["highbush blueberry", " American blueberry"],
+                        "Preferred_Term": "Vaccinium corymbosum",
+                        "Source_ID": "NCBI_TAXONOMY:69266",
+                        "Rank": "species",
+                        "Term": "Vaccinium corymbosum",
+                        "Source": "NCBI_Taxonomy"
+                    },
+                    "id": "6491719"
+                },
+                "relationship": {
+                    "identity": "7523040",
+                    "start": "6491719",
+                    "end": "4903772",
+                    "type": "store",
+                    "properties": {
+                        "hit_text": "Quality of blueberry fruit /Vaccinium corymbosum L./ stored under LPS, CA, and normal air storage...",
+                        "source": "linguamatics_title",
+                        "doc_id": "IND92016423"
+                    },
+                    "id": "7523040",
+                    "startNode": "6491719",
+                    "endNode": "4903772"
+                },
+                "end": {
+                    "identity": "4903772",
+                    "labels": ["Chemical"],
+                    "properties": {
+                        "Synonyms": ["ChEBI:C00076 KEGG COMPOUND", "DrugBank:DB01373 DrugBank", "ChemIDplus:7440-70-2 CAS Registry Number", "WebElements:Ca WebElements", "calcium"],
+                        "Definition": "An alkaline earth metal atom that has formula Ca.",
+                        "Source_ID": "CHEBI:22984",
+                        "Source": "chebi_ontology",
+                        "Name": "calcium atom"
+                    },
+                    "id": "4903772"
+                }
+            }, {
+                "start": {
+                    "identity": "4903772",
+                    "labels": ["Chemical"],
+                    "properties": {
+                        "Synonyms": ["ChEBI:C00076 KEGG COMPOUND", "DrugBank:DB01373 DrugBank", "ChemIDplus:7440-70-2 CAS Registry Number", "WebElements:Ca WebElements", "calcium"],
+                        "Definition": "An alkaline earth metal atom that has formula Ca.",
+                        "Source_ID": "CHEBI:22984",
+                        "Source": "chebi_ontology",
+                        "Name": "calcium atom"
+                    },
+                    "id": "4903772"
+                },
+                "relationship": {
+                    "identity": "8683201",
+                    "start": "4903772",
+                    "end": "580209",
+                    "type": "RANKL-induc",
+                    "properties": {
+                        "hit_text": "... via suppressing the increase of [Ca(2+)](i) which lead to inhibit RANKL-induced the phosphorylation of ERK, Akt and p38 MAPK...",
+                        "source": "linguamatics_abstract",
+                        "doc_id": "20667748"
+                    },
+                    "id": "8683201",
+                    "startNode": "4903772",
+                    "endNode": "580209"
+                },
+                "end": {
+                    "identity": "580209",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["EPHB2", "EPHB2", "EPH-like kinase 5", "developmentally-regulated Eph-related tyrosine kinase", "elk-related tyrosine kinase", "eph tyrosine kinase 3", "protein-tyrosine kinase HEK5", "renal carcinoma antigen NY-REN-47", "tyrosine-protein kinase TYRO5", "tyrosine-protein kinase receptor EPH-3", "CAPB", "DRT", "EK5", "EPHT3", "ERK", "Hek5", "PCBC", "Tyro5"],
+                        "Description": "EPH receptor B2",
+                        "GeneID": "ENTREZ:2048",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "580209"
+                }
+            }, {
+                "start": {
+                    "identity": "580209",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["EPHB2", "EPHB2", "EPH-like kinase 5", "developmentally-regulated Eph-related tyrosine kinase", "elk-related tyrosine kinase", "eph tyrosine kinase 3", "protein-tyrosine kinase HEK5", "renal carcinoma antigen NY-REN-47", "tyrosine-protein kinase TYRO5", "tyrosine-protein kinase receptor EPH-3", "CAPB", "DRT", "EK5", "EPHT3", "ERK", "Hek5", "PCBC", "Tyro5"],
+                        "Description": "EPH receptor B2",
+                        "GeneID": "ENTREZ:2048",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "580209"
+                },
+                "relationship": {
+                    "identity": "4426066",
+                    "start": "580209",
+                    "end": "4962705",
+                    "type": "performs",
+                    "properties": {
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "4426066",
+                    "startNode": "580209",
+                    "endNode": "4962705"
+                },
+                "end": {
+                    "identity": "4962705",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Definition": "Interacting selectively and non-covalently with ATP, adenosine 5-triphosphate, a universally important coenzyme and enzyme regulator.",
+                        "Source_ID": "GO:0005524",
+                        "Source": "gene_ontology",
+                        "Name": "ATP binding"
+                    },
+                    "id": "4962705"
+                }
+            }, {
+                "start": {
+                    "identity": "4962705",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Definition": "Interacting selectively and non-covalently with ATP, adenosine 5-triphosphate, a universally important coenzyme and enzyme regulator.",
+                        "Source_ID": "GO:0005524",
+                        "Source": "gene_ontology",
+                        "Name": "ATP binding"
+                    },
+                    "id": "4962705"
+                },
+                "relationship": {
+                    "identity": "4428253",
+                    "start": "1349243",
+                    "end": "4962705",
+                    "type": "performs",
+                    "properties": {
+                        "PubMedIDs": ["8341706"],
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "4428253",
+                    "startNode": "1349243",
+                    "endNode": "4962705"
+                },
+                "end": {
+                    "identity": "1349243",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["Fkbp4", "Fkbp4", "52 kDa FK506-binding protein", "52 kDa FKBP", "59 kDa immunophilin", "FK506-binding protein 4", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "rotamase", "59kDa", "AL022792", "AW208983", "FKBP-4", "FKBP-52", "FKBP52", "FKPB52", "p59"],
+                        "Description": "FK506 binding protein 4",
+                        "GeneID": "ENTREZ:14228",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "1349243"
+                }
+            }],
+            "length": 4
+        }, {
+            "start": {
+                "identity": "1349243",
+                "labels": ["Gene"],
+                "properties": {
+                    "Synonyms": ["Fkbp4", "Fkbp4", "52 kDa FK506-binding protein", "52 kDa FKBP", "59 kDa immunophilin", "FK506-binding protein 4", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "rotamase", "59kDa", "AL022792", "AW208983", "FKBP-4", "FKBP-52", "FKBP52", "FKPB52", "p59"],
+                    "Description": "FK506 binding protein 4",
+                    "GeneID": "ENTREZ:14228",
+                    "Source": "NCBI_Entrez_Gene"
+                },
+                "id": "1349243"
+            },
+            "end": {
+                "identity": "5245383",
+                "labels": ["Medical_Heading"],
+                "properties": {
+                    "Synonyms": ["Focal Onset Alzheimer's Disease", "Alzheimer Type Dementia", "Senile Dementia, Acute Confusional", "Dementia, Alzheimer Type", "Disease, Alzheimer", "Alzheimer's Disease, Focal Onset", "Primary Senile Degenerative Dementia", "Alzheimer Sclerosis", "Alzheimer Type Senile Dementia", "Syndrome, Alzheimer", "Senile Dementia", "Sclerosis, Alzheimer", "Dementia, Alzheimer-Type (ATD)", "Alzheimer-Type Dementia (ATD)", "Disease, Alzheimer's", "Alzheimer Syndrome", "Alzheimer Type Dementia (ATD)", "Presenile Dementia", "Alzheimer's Disease", "Acute Confusional Senile Dementia", "Early Onset Alzheimer Disease", "Alzheimer Dementia (AD)", "Senile Dementia, Alzheimer Type", "Late Onset Alzheimer Disease", "Presenile Alzheimer Dementia", "Alzheimer Disease, Early Onset", "Familial Alzheimer Disease (FAD)", "Dementia, Alzheimer (AD)", "Dementia, Senile", "Alzheimer Disease, Late Onset", "Dementia, Presenile", "Dementia, Primary Senile Degenerative"],
+                    "Semantic_Type": ["T047"],
+                    "Mesh_TreeNumber": "C10.574.945.249;C10.228.140.380.100;F03.615.400.100",
+                    "Source_id": "D000544",
+                    "Term": "Alzheimer Disease",
+                    "Source": "MeSH"
+                },
+                "id": "5245383"
+            },
+            "segments": [{
+                "start": {
+                    "identity": "1349243",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["Fkbp4", "Fkbp4", "52 kDa FK506-binding protein", "52 kDa FKBP", "59 kDa immunophilin", "FK506-binding protein 4", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "rotamase", "59kDa", "AL022792", "AW208983", "FKBP-4", "FKBP-52", "FKBP52", "FKPB52", "p59"],
+                        "Description": "FK506 binding protein 4",
+                        "GeneID": "ENTREZ:14228",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "1349243"
+                },
+                "relationship": {
+                    "identity": "4016810",
+                    "start": "1349243",
+                    "end": "4994275",
+                    "type": "part_of",
+                    "properties": {
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "4016810",
+                    "startNode": "1349243",
+                    "endNode": "4994275"
+                },
+                "end": {
+                    "identity": "4994275",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Synonyms": ["Reactome:REACT_109411 Formation of tubulin folding intermediates by CCT/TriC, Bos taurus", "Reactome:REACT_104912 Chaperonin-mediated protein folding, Caenorhabditis elegans", "Reactome:REACT_77627 Chaperonin-mediated protein folding, Plasmodium falciparum", "Reactome:REACT_106894 Formation of tubulin folding intermediates by CCT/TriC, Canis familiaris", "Reactome:REACT_92785 Formation of tubulin folding intermediates by CCT/TriC, Dictyostelium discoideum", "Reactome:REACT_16956 Formation of tubulin folding intermediates by CCT/TriC, Homo sapiens", "Reactome:REACT_106927 Chaperonin-mediated protein folding, Drosophila melanogaster", "Reactome:REACT_94772 Chaperonin-mediated protein folding, Sus scrofa", "Reactome:REACT_105663 Chaperonin-mediated protein folding, Rattus norvegicus", "Reactome:REACT_23878 N-glycan trimming in the ER and Calnexin/Calreticulin cycle, Homo sapiens", "Reactome:REACT_17004 Chaperonin-mediated protein folding, Homo sapiens", "Reactome:REACT_33395 Formation of tubulin folding intermediates by CCT/TriC, Mus musculus", "Reactome:REACT_98132 Formation of tubulin folding intermediates by CCT/TriC, Oryza sativa", "Reactome:REACT_78530 Formation of tubulin folding intermediates by CCT/TriC, Gallus gallus", "Reactome:REACT_32155 Chaperonin-mediated protein folding, Saccharomyces cerevisiae", "Reactome:REACT_17001 Formation of tubulin folding intermediates by CCT/TriC, Mus musculus", "Reactome:REACT_85492 Formation of tubulin folding intermediates by CCT/TriC, Sus scrofa", "Reactome:REACT_100411 Chaperonin-mediated protein folding, Arabidopsis thaliana", "Reactome:REACT_110417 Formation of tubulin folding intermediates by CCT/TriC, Rattus norvegicus", "Reactome:REACT_108248 Chaperonin-mediated protein folding, Gallus gallus", "Reactome:REACT_83906 Chaperonin-mediated protein folding, Dictyostelium discoideum", "Reactome:REACT_81155 Formation of tubulin folding intermediates by CCT/TriC, Caenorhabditis elegans", "Reactome:REACT_17056 Cooperation of Prefoldin and TriC/CCT in actin and tubulin folding, Bos taurus", "Reactome:REACT_97220 Formation of tubulin folding intermediates by CCT/TriC, Xenopus tropicalis", "Reactome:REACT_92981 Chaperonin-mediated protein folding, Taeniopygia guttata", "Reactome:REACT_85496 Formation of tubulin folding intermediates by CCT/TriC, Plasmodium falciparum", "Reactome:REACT_94443 Formation of tubulin folding intermediates by CCT/TriC, Danio rerio", "Reactome:REACT_91676 Formation of tubulin folding intermediates by CCT/TriC, Schizosaccharomyces pombe", "Reactome:REACT_30906 Chaperonin-mediated protein folding, Oryza sativa", "Reactome:REACT_106427 Chaperonin-mediated protein folding, Mus musculus", "Reactome:REACT_106009 Chaperonin-mediated protein folding, Canis familiaris", "Reactome:REACT_92961 Chaperonin-mediated protein folding, Xenopus tropicalis", "Reactome:REACT_96773 Chaperonin-mediated protein folding, Danio rerio", "Reactome:REACT_94123 Formation of tubulin folding intermediates by CCT/TriC, Taeniopygia guttata", "Reactome:REACT_86318 Formation of tubulin folding intermediates by CCT/TriC, Arabidopsis thaliana", "Wikipedia:Protein_folding", "Reactome:REACT_32255 Chaperonin-mediated protein folding, Schizosaccharomyces pombe", "Reactome:REACT_107029 Formation of tubulin folding intermediates by CCT/TriC, Drosophila melanogaster", "Reactome:REACT_77963 Formation of tubulin folding intermediates by CCT/TriC, Saccharomyces cerevisiae", "Reactome:REACT_97016 Chaperonin-mediated protein folding, Bos taurus"],
+                        "Definition": "The process of assisting in the covalent and noncovalent assembly of single chain polypeptides or multisubunit complexes into the correct tertiary structure.",
+                        "Source_ID": "GO:0006457",
+                        "Source": "gene_ontology",
+                        "Name": "protein folding"
+                    },
+                    "id": "4994275"
+                }
+            }, {
+                "start": {
+                    "identity": "4994275",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Synonyms": ["Reactome:REACT_109411 Formation of tubulin folding intermediates by CCT/TriC, Bos taurus", "Reactome:REACT_104912 Chaperonin-mediated protein folding, Caenorhabditis elegans", "Reactome:REACT_77627 Chaperonin-mediated protein folding, Plasmodium falciparum", "Reactome:REACT_106894 Formation of tubulin folding intermediates by CCT/TriC, Canis familiaris", "Reactome:REACT_92785 Formation of tubulin folding intermediates by CCT/TriC, Dictyostelium discoideum", "Reactome:REACT_16956 Formation of tubulin folding intermediates by CCT/TriC, Homo sapiens", "Reactome:REACT_106927 Chaperonin-mediated protein folding, Drosophila melanogaster", "Reactome:REACT_94772 Chaperonin-mediated protein folding, Sus scrofa", "Reactome:REACT_105663 Chaperonin-mediated protein folding, Rattus norvegicus", "Reactome:REACT_23878 N-glycan trimming in the ER and Calnexin/Calreticulin cycle, Homo sapiens", "Reactome:REACT_17004 Chaperonin-mediated protein folding, Homo sapiens", "Reactome:REACT_33395 Formation of tubulin folding intermediates by CCT/TriC, Mus musculus", "Reactome:REACT_98132 Formation of tubulin folding intermediates by CCT/TriC, Oryza sativa", "Reactome:REACT_78530 Formation of tubulin folding intermediates by CCT/TriC, Gallus gallus", "Reactome:REACT_32155 Chaperonin-mediated protein folding, Saccharomyces cerevisiae", "Reactome:REACT_17001 Formation of tubulin folding intermediates by CCT/TriC, Mus musculus", "Reactome:REACT_85492 Formation of tubulin folding intermediates by CCT/TriC, Sus scrofa", "Reactome:REACT_100411 Chaperonin-mediated protein folding, Arabidopsis thaliana", "Reactome:REACT_110417 Formation of tubulin folding intermediates by CCT/TriC, Rattus norvegicus", "Reactome:REACT_108248 Chaperonin-mediated protein folding, Gallus gallus", "Reactome:REACT_83906 Chaperonin-mediated protein folding, Dictyostelium discoideum", "Reactome:REACT_81155 Formation of tubulin folding intermediates by CCT/TriC, Caenorhabditis elegans", "Reactome:REACT_17056 Cooperation of Prefoldin and TriC/CCT in actin and tubulin folding, Bos taurus", "Reactome:REACT_97220 Formation of tubulin folding intermediates by CCT/TriC, Xenopus tropicalis", "Reactome:REACT_92981 Chaperonin-mediated protein folding, Taeniopygia guttata", "Reactome:REACT_85496 Formation of tubulin folding intermediates by CCT/TriC, Plasmodium falciparum", "Reactome:REACT_94443 Formation of tubulin folding intermediates by CCT/TriC, Danio rerio", "Reactome:REACT_91676 Formation of tubulin folding intermediates by CCT/TriC, Schizosaccharomyces pombe", "Reactome:REACT_30906 Chaperonin-mediated protein folding, Oryza sativa", "Reactome:REACT_106427 Chaperonin-mediated protein folding, Mus musculus", "Reactome:REACT_106009 Chaperonin-mediated protein folding, Canis familiaris", "Reactome:REACT_92961 Chaperonin-mediated protein folding, Xenopus tropicalis", "Reactome:REACT_96773 Chaperonin-mediated protein folding, Danio rerio", "Reactome:REACT_94123 Formation of tubulin folding intermediates by CCT/TriC, Taeniopygia guttata", "Reactome:REACT_86318 Formation of tubulin folding intermediates by CCT/TriC, Arabidopsis thaliana", "Wikipedia:Protein_folding", "Reactome:REACT_32255 Chaperonin-mediated protein folding, Schizosaccharomyces pombe", "Reactome:REACT_107029 Formation of tubulin folding intermediates by CCT/TriC, Drosophila melanogaster", "Reactome:REACT_77963 Formation of tubulin folding intermediates by CCT/TriC, Saccharomyces cerevisiae", "Reactome:REACT_97016 Chaperonin-mediated protein folding, Bos taurus"],
+                        "Definition": "The process of assisting in the covalent and noncovalent assembly of single chain polypeptides or multisubunit complexes into the correct tertiary structure.",
+                        "Source_ID": "GO:0006457",
+                        "Source": "gene_ontology",
+                        "Name": "protein folding"
+                    },
+                    "id": "4994275"
+                },
+                "relationship": {
+                    "identity": "8182408",
+                    "start": "4994275",
+                    "end": "5245383",
+                    "type": "neurodegener",
+                    "properties": {
+                        "hit_text": "Protein folding, nucleation phenomena and delayed neurodegeneration in Alzheimer's disease.",
+                        "source": "linguamatics_title",
+                        "doc_id": "8736676"
+                    },
+                    "id": "8182408",
+                    "startNode": "4994275",
+                    "endNode": "5245383"
+                },
+                "end": {
+                    "identity": "5245383",
+                    "labels": ["Medical_Heading"],
+                    "properties": {
+                        "Synonyms": ["Focal Onset Alzheimer's Disease", "Alzheimer Type Dementia", "Senile Dementia, Acute Confusional", "Dementia, Alzheimer Type", "Disease, Alzheimer", "Alzheimer's Disease, Focal Onset", "Primary Senile Degenerative Dementia", "Alzheimer Sclerosis", "Alzheimer Type Senile Dementia", "Syndrome, Alzheimer", "Senile Dementia", "Sclerosis, Alzheimer", "Dementia, Alzheimer-Type (ATD)", "Alzheimer-Type Dementia (ATD)", "Disease, Alzheimer's", "Alzheimer Syndrome", "Alzheimer Type Dementia (ATD)", "Presenile Dementia", "Alzheimer's Disease", "Acute Confusional Senile Dementia", "Early Onset Alzheimer Disease", "Alzheimer Dementia (AD)", "Senile Dementia, Alzheimer Type", "Late Onset Alzheimer Disease", "Presenile Alzheimer Dementia", "Alzheimer Disease, Early Onset", "Familial Alzheimer Disease (FAD)", "Dementia, Alzheimer (AD)", "Dementia, Senile", "Alzheimer Disease, Late Onset", "Dementia, Presenile", "Dementia, Primary Senile Degenerative"],
+                        "Semantic_Type": ["T047"],
+                        "Mesh_TreeNumber": "C10.574.945.249;C10.228.140.380.100;F03.615.400.100",
+                        "Source_id": "D000544",
+                        "Term": "Alzheimer Disease",
+                        "Source": "MeSH"
+                    },
+                    "id": "5245383"
+                }
+            }],
+            "length": 2
+        }],
+        "_fieldLookup": {
+            "p1": 0,
+            "p2": 1
+        }
+    }, {
+        "keys": ["p1", "p2"],
+        "length": 2,
+        "_fields": [{
+            "start": {
+                "identity": "6491719",
+                "labels": ["Plant"],
+                "properties": {
+                    "Synonyms": ["highbush blueberry", " American blueberry"],
+                    "Preferred_Term": "Vaccinium corymbosum",
+                    "Source_ID": "NCBI_TAXONOMY:69266",
+                    "Rank": "species",
+                    "Term": "Vaccinium corymbosum",
+                    "Source": "NCBI_Taxonomy"
+                },
+                "id": "6491719"
+            },
+            "end": {
+                "identity": "1421449",
+                "labels": ["Gene"],
+                "properties": {
+                    "Synonyms": ["Fkbp4", "Fkbp4", "52 kDa FK506-binding protein", "52 kDa FKBP", "59 kDa immunophilin", "FK506 binding protein 52", "FK506-binding protein 4", "FKBP52 protein", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "rotamase", "FKBP-4", "FKBP-52", "p59"],
+                    "Description": "FK506 binding protein 4",
+                    "GeneID": "ENTREZ:260321",
+                    "Source": "NCBI_Entrez_Gene"
+                },
+                "id": "1421449"
+            },
+            "segments": [{
+                "start": {
+                    "identity": "6491719",
+                    "labels": ["Plant"],
+                    "properties": {
+                        "Synonyms": ["highbush blueberry", " American blueberry"],
+                        "Preferred_Term": "Vaccinium corymbosum",
+                        "Source_ID": "NCBI_TAXONOMY:69266",
+                        "Rank": "species",
+                        "Term": "Vaccinium corymbosum",
+                        "Source": "NCBI_Taxonomy"
+                    },
+                    "id": "6491719"
+                },
+                "relationship": {
+                    "identity": "7523040",
+                    "start": "6491719",
+                    "end": "4903772",
+                    "type": "store",
+                    "properties": {
+                        "hit_text": "Quality of blueberry fruit /Vaccinium corymbosum L./ stored under LPS, CA, and normal air storage...",
+                        "source": "linguamatics_title",
+                        "doc_id": "IND92016423"
+                    },
+                    "id": "7523040",
+                    "startNode": "6491719",
+                    "endNode": "4903772"
+                },
+                "end": {
+                    "identity": "4903772",
+                    "labels": ["Chemical"],
+                    "properties": {
+                        "Synonyms": ["ChEBI:C00076 KEGG COMPOUND", "DrugBank:DB01373 DrugBank", "ChemIDplus:7440-70-2 CAS Registry Number", "WebElements:Ca WebElements", "calcium"],
+                        "Definition": "An alkaline earth metal atom that has formula Ca.",
+                        "Source_ID": "CHEBI:22984",
+                        "Source": "chebi_ontology",
+                        "Name": "calcium atom"
+                    },
+                    "id": "4903772"
+                }
+            }, {
+                "start": {
+                    "identity": "4903772",
+                    "labels": ["Chemical"],
+                    "properties": {
+                        "Synonyms": ["ChEBI:C00076 KEGG COMPOUND", "DrugBank:DB01373 DrugBank", "ChemIDplus:7440-70-2 CAS Registry Number", "WebElements:Ca WebElements", "calcium"],
+                        "Definition": "An alkaline earth metal atom that has formula Ca.",
+                        "Source_ID": "CHEBI:22984",
+                        "Source": "chebi_ontology",
+                        "Name": "calcium atom"
+                    },
+                    "id": "4903772"
+                },
+                "relationship": {
+                    "identity": "8743926",
+                    "start": "4903772",
+                    "end": "579720",
+                    "type": "ATP-deplet",
+                    "properties": {
+                        "hit_text": "... increase of cytosolic Ca(2+)-activity ([Ca(2+)](i)), ceramide formation, ATP-depletion, stimulation of p38 kinase and caspase activation.",
+                        "source": "linguamatics_abstract",
+                        "doc_id": "22814298"
+                    },
+                    "id": "8743926",
+                    "startNode": "4903772",
+                    "endNode": "579720"
+                },
+                "end": {
+                    "identity": "579720",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["MAPK14", "MAPK14", "CSAID-binding protein", "Csaids binding protein", "MAP kinase 14", "MAP kinase Mxi2", "MAP kinase p38 alpha", "MAX-interacting protein 2", "cytokine suppressive anti-inflammatory drug binding protein", "cytokine suppressive anti-inflammatory drug-binding protein", "mitogen-activated protein kinase p38 alpha", "p38 MAP kinase", "p38 mitogen activated protein kinase", "p38alpha Exip", "stress-activated protein kinase 2A", "CSBP", "CSBP1", "CSBP2", "CSPB1", "EXIP", "Mxi2", "PRKM14", "PRKM15", "RK", "SAPK2A", "p38", "p38ALPHA"],
+                        "Description": "mitogen-activated protein kinase 14",
+                        "GeneID": "ENTREZ:1432",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "579720"
+                }
+            }, {
+                "start": {
+                    "identity": "579720",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["MAPK14", "MAPK14", "CSAID-binding protein", "Csaids binding protein", "MAP kinase 14", "MAP kinase Mxi2", "MAP kinase p38 alpha", "MAX-interacting protein 2", "cytokine suppressive anti-inflammatory drug binding protein", "cytokine suppressive anti-inflammatory drug-binding protein", "mitogen-activated protein kinase p38 alpha", "p38 MAP kinase", "p38 mitogen activated protein kinase", "p38alpha Exip", "stress-activated protein kinase 2A", "CSBP", "CSBP1", "CSBP2", "CSPB1", "EXIP", "Mxi2", "PRKM14", "PRKM15", "RK", "SAPK2A", "p38", "p38ALPHA"],
+                        "Description": "mitogen-activated protein kinase 14",
+                        "GeneID": "ENTREZ:1432",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "579720"
+                },
+                "relationship": {
+                    "identity": "4259813",
+                    "start": "579720",
+                    "end": "4962705",
+                    "type": "performs",
+                    "properties": {
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "4259813",
+                    "startNode": "579720",
+                    "endNode": "4962705"
+                },
+                "end": {
+                    "identity": "4962705",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Definition": "Interacting selectively and non-covalently with ATP, adenosine 5-triphosphate, a universally important coenzyme and enzyme regulator.",
+                        "Source_ID": "GO:0005524",
+                        "Source": "gene_ontology",
+                        "Name": "ATP binding"
+                    },
+                    "id": "4962705"
+                }
+            }, {
+                "start": {
+                    "identity": "4962705",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Definition": "Interacting selectively and non-covalently with ATP, adenosine 5-triphosphate, a universally important coenzyme and enzyme regulator.",
+                        "Source_ID": "GO:0005524",
+                        "Source": "gene_ontology",
+                        "Name": "ATP binding"
+                    },
+                    "id": "4962705"
+                },
+                "relationship": {
+                    "identity": "4339502",
+                    "start": "1421449",
+                    "end": "4962705",
+                    "type": "performs",
+                    "properties": {
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "4339502",
+                    "startNode": "1421449",
+                    "endNode": "4962705"
+                },
+                "end": {
+                    "identity": "1421449",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["Fkbp4", "Fkbp4", "52 kDa FK506-binding protein", "52 kDa FKBP", "59 kDa immunophilin", "FK506 binding protein 52", "FK506-binding protein 4", "FKBP52 protein", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "rotamase", "FKBP-4", "FKBP-52", "p59"],
+                        "Description": "FK506 binding protein 4",
+                        "GeneID": "ENTREZ:260321",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "1421449"
+                }
+            }],
+            "length": 4
+        }, {
+            "start": {
+                "identity": "1421449",
+                "labels": ["Gene"],
+                "properties": {
+                    "Synonyms": ["Fkbp4", "Fkbp4", "52 kDa FK506-binding protein", "52 kDa FKBP", "59 kDa immunophilin", "FK506 binding protein 52", "FK506-binding protein 4", "FKBP52 protein", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "rotamase", "FKBP-4", "FKBP-52", "p59"],
+                    "Description": "FK506 binding protein 4",
+                    "GeneID": "ENTREZ:260321",
+                    "Source": "NCBI_Entrez_Gene"
+                },
+                "id": "1421449"
+            },
+            "end": {
+                "identity": "5245383",
+                "labels": ["Medical_Heading"],
+                "properties": {
+                    "Synonyms": ["Focal Onset Alzheimer's Disease", "Alzheimer Type Dementia", "Senile Dementia, Acute Confusional", "Dementia, Alzheimer Type", "Disease, Alzheimer", "Alzheimer's Disease, Focal Onset", "Primary Senile Degenerative Dementia", "Alzheimer Sclerosis", "Alzheimer Type Senile Dementia", "Syndrome, Alzheimer", "Senile Dementia", "Sclerosis, Alzheimer", "Dementia, Alzheimer-Type (ATD)", "Alzheimer-Type Dementia (ATD)", "Disease, Alzheimer's", "Alzheimer Syndrome", "Alzheimer Type Dementia (ATD)", "Presenile Dementia", "Alzheimer's Disease", "Acute Confusional Senile Dementia", "Early Onset Alzheimer Disease", "Alzheimer Dementia (AD)", "Senile Dementia, Alzheimer Type", "Late Onset Alzheimer Disease", "Presenile Alzheimer Dementia", "Alzheimer Disease, Early Onset", "Familial Alzheimer Disease (FAD)", "Dementia, Alzheimer (AD)", "Dementia, Senile", "Alzheimer Disease, Late Onset", "Dementia, Presenile", "Dementia, Primary Senile Degenerative"],
+                    "Semantic_Type": ["T047"],
+                    "Mesh_TreeNumber": "C10.574.945.249;C10.228.140.380.100;F03.615.400.100",
+                    "Source_id": "D000544",
+                    "Term": "Alzheimer Disease",
+                    "Source": "MeSH"
+                },
+                "id": "5245383"
+            },
+            "segments": [{
+                "start": {
+                    "identity": "1421449",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["Fkbp4", "Fkbp4", "52 kDa FK506-binding protein", "52 kDa FKBP", "59 kDa immunophilin", "FK506 binding protein 52", "FK506-binding protein 4", "FKBP52 protein", "FKBP59", "HBI", "HSP-binding immunophilin", "PPIase FKBP4", "immunophilin FKBP52", "rotamase", "FKBP-4", "FKBP-52", "p59"],
+                        "Description": "FK506 binding protein 4",
+                        "GeneID": "ENTREZ:260321",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "1421449"
+                },
+                "relationship": {
+                    "identity": "4339502",
+                    "start": "1421449",
+                    "end": "4962705",
+                    "type": "performs",
+                    "properties": {
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "4339502",
+                    "startNode": "1421449",
+                    "endNode": "4962705"
+                },
+                "end": {
+                    "identity": "4962705",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Definition": "Interacting selectively and non-covalently with ATP, adenosine 5-triphosphate, a universally important coenzyme and enzyme regulator.",
+                        "Source_ID": "GO:0005524",
+                        "Source": "gene_ontology",
+                        "Name": "ATP binding"
+                    },
+                    "id": "4962705"
+                }
+            }, {
+                "start": {
+                    "identity": "4962705",
+                    "labels": ["Pathway"],
+                    "properties": {
+                        "Definition": "Interacting selectively and non-covalently with ATP, adenosine 5-triphosphate, a universally important coenzyme and enzyme regulator.",
+                        "Source_ID": "GO:0005524",
+                        "Source": "gene_ontology",
+                        "Name": "ATP binding"
+                    },
+                    "id": "4962705"
+                },
+                "relationship": {
+                    "identity": "4258386",
+                    "start": "578561",
+                    "end": "4962705",
+                    "type": "performs",
+                    "properties": {
+                        "PubMedIDs": ["11700048"],
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "4258386",
+                    "startNode": "578561",
+                    "endNode": "4962705"
+                },
+                "end": {
+                    "identity": "578561",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["ABCA1", "ABCA1", "ATP-binding cassette transporter A1", "ATP-binding cassette, sub-family A (ABC1), member 1", "cholesterol efflux regulatory protein", "membrane-bound", "ABC-1", "ABC1", "CERP", "HDLDT1", "TGD"],
+                        "Description": "ATP binding cassette subfamily A member 1",
+                        "GeneID": "ENTREZ:19",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "578561"
+                }
+            }, {
+                "start": {
+                    "identity": "578561",
+                    "labels": ["Gene"],
+                    "properties": {
+                        "Synonyms": ["ABCA1", "ABCA1", "ATP-binding cassette transporter A1", "ATP-binding cassette, sub-family A (ABC1), member 1", "cholesterol efflux regulatory protein", "membrane-bound", "ABC-1", "ABC1", "CERP", "HDLDT1", "TGD"],
+                        "Description": "ATP binding cassette subfamily A member 1",
+                        "GeneID": "ENTREZ:19",
+                        "Source": "NCBI_Entrez_Gene"
+                    },
+                    "id": "578561"
+                },
+                "relationship": {
+                    "identity": "7695257",
+                    "start": "578561",
+                    "end": "5245383",
+                    "type": "beta-amyloid",
+                    "properties": {
+                        "hit_text": "The role of ABCB1 and ABCA1 in beta-amyloid clearance at the neurovascular unit in Alzheimer's disease.",
+                        "source": "linguamatics_title",
+                        "doc_id": "23494712"
+                    },
+                    "id": "7695257",
+                    "startNode": "578561",
+                    "endNode": "5245383"
+                },
+                "end": {
+                    "identity": "5245383",
+                    "labels": ["Medical_Heading"],
+                    "properties": {
+                        "Synonyms": ["Focal Onset Alzheimer's Disease", "Alzheimer Type Dementia", "Senile Dementia, Acute Confusional", "Dementia, Alzheimer Type", "Disease, Alzheimer", "Alzheimer's Disease, Focal Onset", "Primary Senile Degenerative Dementia", "Alzheimer Sclerosis", "Alzheimer Type Senile Dementia", "Syndrome, Alzheimer", "Senile Dementia", "Sclerosis, Alzheimer", "Dementia, Alzheimer-Type (ATD)", "Alzheimer-Type Dementia (ATD)", "Disease, Alzheimer's", "Alzheimer Syndrome", "Alzheimer Type Dementia (ATD)", "Presenile Dementia", "Alzheimer's Disease", "Acute Confusional Senile Dementia", "Early Onset Alzheimer Disease", "Alzheimer Dementia (AD)", "Senile Dementia, Alzheimer Type", "Late Onset Alzheimer Disease", "Presenile Alzheimer Dementia", "Alzheimer Disease, Early Onset", "Familial Alzheimer Disease (FAD)", "Dementia, Alzheimer (AD)", "Dementia, Senile", "Alzheimer Disease, Late Onset", "Dementia, Presenile", "Dementia, Primary Senile Degenerative"],
+                        "Semantic_Type": ["T047"],
+                        "Mesh_TreeNumber": "C10.574.945.249;C10.228.140.380.100;F03.615.400.100",
+                        "Source_id": "D000544",
+                        "Term": "Alzheimer Disease",
+                        "Source": "MeSH"
+                    },
+                    "id": "5245383"
+                }
+            }],
+            "length": 3
+        }],
+        "_fieldLookup": {
+            "p1": 0,
+            "p2": 1
+        }
+    }],
+    "summary": {
+        "statement": {
+            "text": "MATCH p1 = shortestPath((a:Plant {Term:\"Vaccinium corymbosum\"})-[*]-(z:Gene {Description:\"FK506 binding protein 4\"}))\nMATCH p2 = shortestPath((z)-[*]-(d:Medical_Heading {Term:\"Alzheimer Disease\"}))\nRETURN p1,p2",
+            "parameters": {}
+        },
+        "statementType": "r",
+        "updateStatistics": {
+            "_stats": {
+                "nodesCreated": 0,
+                "nodesDeleted": 0,
+                "relationshipsCreated": 0,
+                "relationshipsDeleted": 0,
+                "propertiesSet": 0,
+                "labelsAdded": 0,
+                "labelsRemoved": 0,
+                "indexesAdded": 0,
+                "indexesRemoved": 0,
+                "constraintsAdded": 0,
+                "constraintsRemoved": 0
+            }
+        },
+        "plan": false,
+        "profile": false,
+        "notifications": []
+    },
+    "responseTime": 18526
+}
