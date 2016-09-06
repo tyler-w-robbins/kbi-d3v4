@@ -19,7 +19,7 @@
         });
     }
 
-    function visualize_graph(json) {
+    function visualize_graph(jsonFile) {
 
         var svg = d3.select("svg"),
                 width = +svg.attr("width"),
@@ -52,7 +52,7 @@
                     .selectAll("circle")
                     .data(graph.nodes)
                     .enter().append("circle")
-                    .attr("r", 15)
+                    .attr("r", 5)
                     .attr("fill", function (d) {
                         return color(d.group);
                     })
