@@ -5,7 +5,21 @@
 </div>
 
 <script>
-    function visualize_graph(jsonFile) {
+    function parse_example_query() {
+        $.getJSON( "data/query1.json", function( data ) {
+            var records = data.records;
+            var summary = data.summary;
+            var query_text = summary.statement.text;
+            console.log('Neo4j Query:\n' + query_text.toString());
+            console.log('Query Results:')
+            console.log(records);
+
+            // TODO: get nodes and links from the data as a json array that works with the function visualize_graph...
+
+        });
+    }
+
+    function visualize_graph(json) {
 
         var svg = d3.select("svg"),
                 width = +svg.attr("width"),
@@ -38,7 +52,7 @@
                     .selectAll("circle")
                     .data(graph.nodes)
                     .enter().append("circle")
-                    .attr("r", 5)
+                    .attr("r", 15)
                     .attr("fill", function (d) {
                         return color(d.group);
                     })
@@ -103,6 +117,8 @@
     }
 
     $('#loadExampleData').click(function() {
+        parse_example_query();
+
         var jsonFile = $(this).text();
         console.log(jsonFile);
         visualize_graph(jsonFile);
