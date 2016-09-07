@@ -1,0 +1,31 @@
+/**
+    function parse_example_query() {
+        $.getJSON( "data/query1.json", function( data ) {
+            var records = data.records;
+            var summary = data.summary;
+            var query_text = summary.statement.text;
+            console.log('Neo4j Query:\n' + query_text.toString());
+            console.log('Query Results:')
+            console.log(records);
+
+            // TODO: get nodes and links from the data as a json array that works with the function
+
+        });
+    }
+
+    function printRecord(record) {
+      console.log('# record');
+      var arr = record._fields;
+      for(var i=0; i < arr.length; i++) {
+        var path = arr[i];
+        console.log('# path_start');
+        console.log(path.start);
+
+        console.log('# segments');
+        console.log(path.segments);
+
+        console.log('# path_end');
+        console.log(path.end);
+      }
+    }
+**/

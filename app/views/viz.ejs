@@ -1,126 +1,148 @@
-<!-- load D3.js dependency -->
-<script src="/components/d3/d3.js"></script>
 <div class="viz">
-    <svg width="960" height="600"></svg>
+    <svg width="1200" height="700"></svg>
 </div>
-
 <script>
-    function parse_example_query() {
-        $.getJSON( "data/query1.json", function( data ) {
-            var records = data.records;
-            var summary = data.summary;
-            var query_text = summary.statement.text;
-            console.log('Neo4j Query:\n' + query_text.toString());
-            console.log('Query Results:')
-            console.log(records);
+  var svg = d3.select("svg"),
+          width = +svg.attr("width"),
+          height = +svg.attr("height");
 
-            // TODO: get nodes and links from the data as a json array that works with the function visualize_graph...
+  var color = d3.scaleOrdinal(d3.schemeCategory20);
 
-        });
-    }
+  var simulation = d3.forceSimulation()
+          .force("link", d3.forceLink().id(function (d) {
+              return d.id;
+          }))
+          .force("charge", d3.forceManyBody())
+          .force("center", d3.forceCenter(width / 2, height / 2));
 
-    function visualize_graph(jsonFile) {
+  // load JSON data into d3 scope
+  d3.json('/data/example.json', function (error, graph) {
+      if (error) throw error;
 
-        var svg = d3.select("svg"),
-                width = +svg.attr("width"),
-                height = +svg.attr("height");
+      var link = svg.append("g")
+              .attr("class", "links")
+              .selectAll("line")
+              .data(graph.links)
+              .enter().append("line")
+              .attr("stroke-width", function (d) {
+                  return Math.sqrt(d.value);
+              });
 
-        var color = d3.scaleOrdinal(d3.schemeCategory20);
+      var node = svg.append("g")
+              .attr("class", "nodes")
+              .selectAll("circle")
+              .data(graph.nodes)
+              .enter().append("circle")
+              .attr("r", 5)
+              .attr("fill", function (d) {
+                  return color(d.group);
+              })
+              .call(d3.drag()
+                      .on("start", dragstarted)
+                      .on("drag", dragged)
+                      .on("end", dragended));
 
-        var simulation = d3.forceSimulation()
-                .force("link", d3.forceLink().id(function (d) {
-                    return d.id;
-                }))
-                .force("charge", d3.forceManyBody())
-                .force("center", d3.forceCenter(width / 2, height / 2));
+      node.append("title")
+              .text(function (d) {
+                  return d.label;
+              });
 
-        // load JSON data into d3 scope
-        d3.json(jsonFile.toString(), function (error, graph) {
-            if (error) throw error;
+      node.append("text")
+        .attr("dx", 12)
+        .attr("dy", ".35em")
+        .text(function(d) { return d.label });
 
-            var link = svg.append("g")
-                    .attr("class", "links")
-                    .selectAll("line")
-                    .data(graph.links)
-                    .enter().append("line")
-                    .attr("stroke-width", function (d) {
-                        return Math.sqrt(d.value);
-                    });
+      simulation
+              .nodes(graph.nodes)
+              .on("tick", ticked);
 
-            var node = svg.append("g")
-                    .attr("class", "nodes")
-                    .selectAll("circle")
-                    .data(graph.nodes)
-                    .enter().append("circle")
-                    .attr("r", 5)
-                    .attr("fill", function (d) {
-                        return color(d.group);
-                    })
-                    .call(d3.drag()
-                            .on("start", dragstarted)
-                            .on("drag", dragged)
-                            .on("end", dragended));
+      simulation.force("link")
+              .links(graph.links);
 
-            node.append("title")
-                    .text(function (d) {
-                        return d.id;
-                    });
+      function ticked() {
+          link
+                  .attr("x1", function (d) {
+                      return d.source.x;
+                  })
+                  .attr("y1", function (d) {
+                      return d.source.y;
+                  })
+                  .attr("x2", function (d) {
+                      return d.target.x;
+                  })
+                  .attr("y2", function (d) {
+                      return d.target.y;
+                  });
 
-            simulation
-                    .nodes(graph.nodes)
-                    .on("tick", ticked);
+          node
+                  .attr("cx", function (d) {
+                      return d.x;
+                  })
+                  .attr("cy", function (d) {
+                      return d.y;
+                  });
+      }
+  });
 
-            simulation.force("link")
-                    .links(graph.links);
+  function dragstarted(d) {
+      if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+  }
 
-            function ticked() {
-                link
-                        .attr("x1", function (d) {
-                            return d.source.x;
-                        })
-                        .attr("y1", function (d) {
-                            return d.source.y;
-                        })
-                        .attr("x2", function (d) {
-                            return d.target.x;
-                        })
-                        .attr("y2", function (d) {
-                            return d.target.y;
-                        });
+  function dragged(d) {
+      d.fx = d3.event.x;
+      d.fy = d3.event.y;
+  }
 
-                node
-                        .attr("cx", function (d) {
-                            return d.x;
-                        })
-                        .attr("cy", function (d) {
-                            return d.y;
-                        });
-            }
-        });
+  function dragended(d) {
+      if (!d3.event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+  }
 
-        function dragstarted(d) {
-            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-            d.fx = d.x;
-            d.fy = d.y;
-        }
+  $('#loadExampleData').click(function() {
+      parse_example_query();
 
-        function dragged(d) {
-            d.fx = d3.event.x;
-            d.fy = d3.event.y;
-        }
+      var jsonFile = $(this).text();
+      console.log(jsonFile);
+      visualize_graph(jsonFile);
+  });
 
-        function dragended(d) {
-            if (!d3.event.active) simulation.alphaTarget(0);
-            d.fx = null;
-            d.fy = null;
-        }
-    }
+    /**
+          // Create a driver instance, for the user neo4j with password neo4j.
+          var driver = neo4j.v1.driver("bolt://localhost", neo4j.v1.auth.basic("neo4j", "sasltw"));
+          // Create a session to run Cypher statements in.
+          // Note: Always make sure to close sessions when you are done using them!
+          var session = driver.session();
+          // Run a Cypher query and print the result in the console
+          console.log('# Query 1');
+          session
+            .run("MATCH p1 = shortestPath((a:Plant {Term:\"Vaccinium corymbosum\"})-[*]-(z:Gene {Description:\"FK506 binding protein 4\"})) MATCH p2 = shortestPath((z)-[*]-(d:Medical_Heading {Term:\"Alzheimer Disease\"})) RETURN p1,p2")
+            .then(function (result) {
+              result.records.forEach(function(record) {
+                // Print each record in the results
+                // console.log(record._fields);
 
-    $('#loadExampleData').click(function() {
-        parse_example_query();
+                console.log('# record');
+                var arr = record._fields;
+                for(var i=0; i < arr.length; i++) {
+                  var path = arr[i];
+                  console.log('# path_start');
+                  console.log(path.start);
 
-        var jsonFile = $(this).text();
-        console.log(jsonFile);
-        visualize_graph(jsonFile);
-    });
+                  console.log('# segments');
+                  console.log(path.segments);
+
+                  console.log('# path_end');
+                  console.log(path.end);
+                }
+            });
+            // Completed!
+            session.close();
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+    **/
 </script>

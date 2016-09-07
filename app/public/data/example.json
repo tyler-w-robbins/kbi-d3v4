@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {"id": 0, "label": "Vaccinium corymbosum", "group": 0},
+    {"id": 1, "label": "calcium atom", "group": 1},
+    {"id": 2, "label": "mitogen-activator", "group": 2},
+    {"id": 3, "label": "EPH receptor B2", "group": 2},
+    {"id": 4, "label": "ATPase plasma membrane Ca2+ transporting 2", "group": 3},
+    {"id": 5, "label": "ATP binding", "group": 3},
+    {"id": 6, "label": "FK506 binding protein 4", "group": 2},
+    {"id": 7, "label": "FK506 binding protein 4", "group": 2},
+    {"id": 8, "label": "protein binding", "group": 3},
+    {"id": 9, "label": "ATP binding cassette subfamily A member 1", "group": 2},
+    {"id": 10, "label": "Focal Onset Alzheimer's", "group": 4},
+    {"id": 11, "label": "protein folding", "group": 3},
+    {"id": 12, "label": "FK506 binding protein 4", "group": 2},
+    {"id": 13, "label": "FK506 binding protein 4", "group": 2},
+    {"id": 14, "label": "inhibitor", "group": 1},
+    {"id": 15, "label": "Solarium tuberosum", "group": 0}
+  ],
+  "links": [
+    {"source": 0, "target": 1, "value": 10},
+    {"source": 1, "target": 2, "value": 2}
+  ]
+}
