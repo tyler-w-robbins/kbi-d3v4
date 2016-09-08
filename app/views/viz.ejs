@@ -23,6 +23,24 @@
     .attr("transform",
       "translate(" + margin.left + "," + margin.top + ")");
 
+  svg.append("defs").selectAll("marker")
+    .data(["end"])
+    .enter().append("marker")
+    .attr("id", function(d) {
+      return d;
+    })
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 11.5)
+    .attr("refY", 0)
+    .attr("fill", "none")
+    .attr("stroke", "#aaa")
+    .attr("stroke-width", 2)
+    .attr("markerWidth", 2)
+    .attr("markerHeight", 2)
+    .attr("orient", "auto")
+    .append("path")
+    .attr("d", "M0,-5L10,0L0,5");
+
   var heatcolor = d3.scaleLinear()
     .domain([0, 8, 16])
     .range(['#f89734', '#f7f7f7', '#1f6938']);
@@ -38,18 +56,13 @@
     .force("charge", d3.forceManyBody().strength(-500))
     // .force("center", d3.forceY((height / 2)))
     .force("x", d3.forceX(function(d) {
-      return (d.shape * 250);
-    }).strength(0.7))
-  .force("y", d3.forceY(height / 2).strength(0.2));
+      return (d.shape * 250 + 100);
+    }).strength(0.9))
+    .force("y", d3.forceY(height / 2).strength(0.1));
 
   // load JSON data into d3 scope
   d3.json(jsonUrl, function(error, graph) {
     if (error) throw error;
-
-
-
-
-
 
     var node = g.selectAll(".node")
       .data(graph.nodes)
@@ -70,7 +83,9 @@
         return "grey";
       })
 
-      .style("fill", function(d, i) {return heatcolor(i);})
+    .style("fill", function(d, i) {
+        return heatcolor(i);
+      })
       .attr("d", d3.symbol()
         .size(function(d) {
           return d.size * 50;
@@ -79,14 +94,19 @@
           return d3.symbols[d.shape];
         }));
 
-        node.append("text")
-      .attr("y", function(d) { return (d.size * 2.5) || 15; })
+    node.append("text")
+      .attr("y", function(d) {
+        return (d.size * 3) || 15;
+      })
       .attr("dy", ".35em")
       .style("fill", "black")
-      .text(function(d) { return d.text; });
+      .text(function(d) {
+        return d.text;
+      });
 
     var link = svg.append("g")
       .attr("class", "links")
+      .attr("marker-end", "url(#end)")
       .selectAll("line")
       .data(graph.edges)
       .enter().append("line")
@@ -105,13 +125,13 @@
     function ticked() {
       link
         .attr("x1", function(d) {
-          return d.source.x+11;
+          return d.source.x + 10;
         })
         .attr("y1", function(d) {
           return d.source.y;
         })
         .attr("x2", function(d) {
-          return d.target.x-11;
+          return d.target.x - 10;
         })
         .attr("y2", function(d) {
           return d.target.y;
