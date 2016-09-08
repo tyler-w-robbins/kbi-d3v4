@@ -1,5 +1,20 @@
 <% include header %>
 <% include navigation %>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+<form class="navbar-form navbar-left" role="search">
+
+  <div class="form-group">
+    <input id="inputA" type="text" class="form-control" placeholder="Search Term A">
+    <input id="inputB" type="text" class="form-control" placeholder="Search Term B">
+  </div>
+
+  <button id="queryGraph" class="btn btn-primary">Query Graph</button>
+
+</form>
+
   <!-- Bootstrap container -->
   <div class="container">
     <% include viz %>

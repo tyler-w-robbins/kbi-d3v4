@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 
 router.get('/', function(req, res) {
-  res.render('index', { title: 'KBI v1.0' });
+  res.render('index', { title: 'Knowledge Base Interface' });
 });
 
 module.exports = router;
