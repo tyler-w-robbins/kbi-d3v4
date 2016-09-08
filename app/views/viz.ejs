@@ -5,100 +5,141 @@
 <script>
   // draw graph for query1 when query1 button is clicked
   //$('#query1').click(function() {
-    var jsonUrl = '/data/query1_graph.json';
+  var jsonUrl = '/data/query1_graph.json';
 
-    var margin = {top: 20, right: 90, bottom: 30, left: 90},
-        width = 660 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+  var margin = {
+      top: 20,
+      right: 90,
+      bottom: 30,
+      left: 90
+    },
+    width = 660 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
-    var svg = d3.select("svg"),
-      width = +svg.attr("width"),
-      height = +svg.attr("height"),
-      g = svg.append("g")
-      .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+  var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height"),
+    g = svg.append("g")
+    .attr("transform",
+      "translate(" + margin.left + "," + margin.top + ")");
 
-    //  TODO: change to heatmap coloring later
-    var color = d3.scaleOrdinal(d3.schemeCategory20);
+  var heatcolor = d3.scaleLinear()
+    .domain([0, 8, 16])
+    .range(['#f89734', '#f7f7f7', '#1f6938']);
 
-    // initializes force simulation and saves to var simulation
-    var simulation = d3.forceSimulation()
-      .force("link", d3.forceLink().id(function(d) {
-        return d.id;
-      }))
-      .force("charge", d3.forceManyBody())
-      .force("center", d3.forceCenter(width / 2, height / 2));
+  //  TODO: change to heatmap coloring later
+  var color = d3.scaleOrdinal(d3.schemeCategory20);
 
-    // load JSON data into d3 scope
-    d3.json(jsonUrl, function(error, graph) {
-      if (error) throw error;
+  // initializes force simulation and saves to var simulation
+  var simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().distance(200).id(function(d) {
+      return d.id;
+    }))
+    .force("charge", d3.forceManyBody().strength(-500))
+    // .force("center", d3.forceY((height / 2)))
+    .force("x", d3.forceX(function(d) {
+      return (d.shape * 250);
+    }).strength(0.7))
+  .force("y", d3.forceY(height / 2).strength(0.2));
 
+  // load JSON data into d3 scope
+  d3.json(jsonUrl, function(error, graph) {
+    if (error) throw error;
+
+
+
+
+
+
+    var node = g.selectAll(".node")
+      .data(graph.nodes)
+      .enter().append("g")
+      .attr("class", function(d) {
+        return "node" +
+          (d.children ? " node--internal" : " node--leaf");
+      })
+      // .attr("transform", function(d) {
+      //   return "translate(" + d.y + "," + d.x + ")"; })
+      .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+
+    node.append("path")
+      .style("stroke", function(d) {
+        return "grey";
+      })
+
+      .style("fill", function(d, i) {return heatcolor(i);})
+      .attr("d", d3.symbol()
+        .size(function(d) {
+          return d.size * 50;
+        })
+        .type(function(d) {
+          return d3.symbols[d.shape];
+        }));
+
+        node.append("text")
+      .attr("y", function(d) { return (d.size * 2.5) || 15; })
+      .attr("dy", ".35em")
+      .style("fill", "black")
+      .text(function(d) { return d.text; });
 
     var link = svg.append("g")
-        .attr("class", "links")
+      .attr("class", "links")
       .selectAll("line")
       .data(graph.edges)
       .enter().append("line")
       // .attr('d',arc)
-        .attr("stroke-width", function(d) { return Math.sqrt(d.weight); });
+      .attr("stroke-width", function(d) {
+        return d.weight;
+      });
 
+    simulation
+      .nodes(graph.nodes)
+      .on("tick", ticked);
 
-
-        var node = g.selectAll(".node")
-            .data(graph.nodes)
-          .enter().append("g")
-            .attr("class", function(d) {
-              return "node" +
-                (d.children ? " node--internal" : " node--leaf"); })
-            // .attr("transform", function(d) {
-            //   return "translate(" + d.y + "," + d.x + ")"; })
-      .call(d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended));
-
-          node.append("path")
-  .style("stroke", function(d) { return "grey"; })
-  .style("fill", function(d) { return "green"; })
-  .attr("d", d3.symbol()
-     .size(function(d) { return d.size * 35; } )
-     .type(function(d) { return d3.symbols[d.shape];}));
-
-      simulation
-        .nodes(graph.nodes)
-        .on("tick", ticked);
-
-      simulation.force("link") // SUSPICIOUS!
-        .links(graph.edges); // set force-directed graph links to graph.edges
+    simulation.force("link") // SUSPICIOUS!
+      .links(graph.edges); // set force-directed graph links to graph.edges
 
     function ticked() {
       link
-          .attr("x1", function(d) { return d.source.x; })
-          .attr("y1", function(d) { return d.source.y; })
-          .attr("x2", function(d) { return d.target.x; })
-          .attr("y2", function(d) { return d.target.y; });
+        .attr("x1", function(d) {
+          return d.source.x+11;
+        })
+        .attr("y1", function(d) {
+          return d.source.y;
+        })
+        .attr("x2", function(d) {
+          return d.target.x-11;
+        })
+        .attr("y2", function(d) {
+          return d.target.y;
+        });
 
       node
-          .attr("transform", function(d) { return "translate(" + (d.x-90) + "," + (d.y-20) + ")"; });
+        .attr("transform", function(d) {
+          return "translate(" + (d.x - 90) + "," + (d.y - 20) + ")";
+        });
     }
   });
 
-    // drag event handlers for nodes
-    function dragstarted(d) {
-      if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-      d.fx = d.x;
-      d.fy = d.y;
-    }
+  // drag event handlers for nodes
+  function dragstarted(d) {
+    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
 
-    function dragged(d) {
-      d.fx = d3.event.x;
-      d.fy = d3.event.y;
-    }
+  function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+  }
 
-    function dragended(d) {
-      if (!d3.event.active) simulation.alphaTarget(0);
-      d.fx = null;
-      d.fy = null;
-    }
+  function dragended(d) {
+    if (!d3.event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
   //});
 </script>

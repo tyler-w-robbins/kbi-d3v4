@@ -26,11 +26,19 @@ body {
 }
 
 .node text {
-  pointer-events: none;
-  font: 12px sans-serif;
+  stroke: #000;
+  font: 10px sans-serif;
+
+  stroke-width: 0px;
+  text-anchor: middle;
 }
 
 .link {
     stroke: #777;
     stroke-width: 2px;
+    cursor: default;
+}
+
+marker{
+    fill: #777;
 }
