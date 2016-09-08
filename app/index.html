@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="Tyler Robbins">
+
+	<title>Knowledge Base Interface</title>
+
+	<!-- import css files -->
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/easy-autocomplete.themes.css" rel="stylesheet">
+	<link href="bootstrap-dashboard.css" rel="stylesheet">
+
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
+
+	<!-- Custom styles for this template -->
+	<link href="bootstrap-dashboard.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+
+	<style>
+		.node text {
+			font: 10px sans-serif;
+			pointer-events: none;
+			text-anchor: middle;
+		}
+
+		line.link {
+			fill: none;
+			stroke: #c0c2c4;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- top navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+				<a class="navbar-brand" href="#">Knowledge Base Interface</a>
+			</div>
+
+			<form class="navbar-form">
+        <div class="form-group" style="display:inline;">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Query search">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+          </div>
+        </div>
+      </form>
+			<!-- <div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Help</a></li>
+				</ul>
+				<form class="navbar-form navbar-right">
+					<input type="text" class="form-control" placeholder="Search...">
+				</form> -->
+			</div>
+		</div>
+	</nav>
+
+	<!-- sidebar -->
+	<div class="container-fluid">
+		<div class="row">
+			<!-- <div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">Reports</a></li>
+					<li><a href="#">Analytics</a></li>
+					<li><a href="#">Export</a></li>
+				</ul>
+				<ul class="nav nav-sidebar">
+					<li><a href="">Nav item</a></li>
+					<li><a href="">Nav item again</a></li>
+					<li><a href="">One more nav</a></li>
+					<li><a href="">Another nav item</a></li>
+					<li><a href="">More navigation</a></li>
+				</ul>
+				<ul class="nav nav-sidebar">
+					<li><a href="">Nav item again</a></li>
+					<li><a href="">One more nav</a></li>
+					<li><a href="">Another nav item</a></li>
+				</ul>
+			</div> -->
+
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header">Dashboard</h1>
+
+				<div id="#dashboard">
+					<script src="//d3js.org/d3.v3.min.js"></script>
+					<script>
+						var width = 960,
+							height = 500,
+							root;
+
+						var heatcolor = d3.scale.linear()
+							.domain([0, 8, 16])
+							.range(['#f89734', '#f7f7f7', '#1f6938']);
+
+						var force = d3.layout.force()
+							.linkDistance(110)
+							.charge(-120)
+							.gravity(.05)
+							.size([width, height])
+							.on("tick", tick);
+
+						var svg = d3.select("body").append("svg")
+							.attr("width", width)
+							.attr("height", height);
+
+						var link = svg.selectAll(".link"),
+							linkText = svg.selectAll(".link-group"),
+							node = svg.selectAll(".node");
+
+						d3.json("graph.json", function(error, json) {
+							if (error) throw error;
+
+							root = json;
+							update();
+						});
+						var edgepaths
+						var edgelabels
+
+						function update() {
+							var nodes = flatten(root),
+								links = d3.layout.tree().links(nodes);
+
+							// Restart the force layout.
+							force
+								.nodes(nodes)
+								.links(links)
+								.start();
+
+							// Update links.
+							link = link.data(links, function(d) {
+								return d.target.id;
+							});
+
+							link.exit().remove();
+
+							var linkEnter = svg.selectAll("g")
+							var lines = link.enter().insert("line", ".node")
+							lines
+								.attr("class", "link")
+								.attr("stroke", function(d) {
+									return Math.sqrt(d.target.size) / 7 || 4.5;
+								})
+								.attr("stroke-width", function(d) {
+									return Math.sqrt(d.target.size) / 7 || 4.5;
+								});
+
+							// Update nodes.
+							node = node.data(nodes, function(d) {
+								return d.id;
+							});
+
+							node.exit().remove();
+
+							var nodeEnter = node.enter().append("g")
+								.attr("class", "node")
+								.on("click", click)
+								.call(force.drag);
+
+
+							/*
+							     edgelabels = lines
+							            //  .data(nodes)
+							            //  .enter()
+							              .append('text')
+							              //.style("pointer-events", "none")
+							              .attr({'class':'edgelabel',
+							                     'id':function(d,i){return 'edgelabel'+i},
+							                     'dx':80,
+							                     'dy':0,
+							                     'font-size':10,
+							                     'fill':'#aaa'});
+
+							          edgelabels.append('textPath')
+							              .attr('xlink:href',function(d,i) {return '#edgelabel'+i})
+							              .style("pointer-events", "none")
+							              .text(function(d,i){return 'test'});
+							*/
+
+
+							// var linkText = svg.selectAll(".link")
+							// .attr("font-size", "13px")
+							//   .append("text")
+							//   .attr("x", function(d) { return (d.source.x + (d.target.x - d.source.x) * 0.50); })
+							//   .attr("y", function(d) { return (d.source.y + (d.target.y - d.source.y) * 0.50); })
+							//   .attr("dy", ".25em")
+							//   .attr("text-anchor", "start")
+							//   .text(function(d) { return d.source.rname;});
+
+							node.append("svg:path")
+								.attr("d", d3.svg.symbol()
+									.type(function(d) {
+										return d.stype;
+									})
+									.size(function(d) {
+										return Math.sqrt(d.size) * 10 || 300;
+									}))
+								.style("fill", function(d, i) {
+									return heatcolor(i);
+								})
+								.style("stroke", "#3182bd")
+								.style("stroke-width", "1.5px")
+								.style("cursor", "pointer");
+
+							nodeEnter.append("text")
+								.attr("y", function(d) {
+									return Math.sqrt(d.size) / 3 || 15;
+								})
+								.attr("dy", ".35em")
+								.text(function(d) {
+									return d.name;
+								});
+
+							////////////////////////////////////////////////////////////
+
+							edgepaths = svg.selectAll(".edgepath")
+								.data(links)
+								.enter()
+								.append('path')
+								.attr({
+									'd': function(d) {
+										return 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y
+									},
+									'class': 'edgepath',
+									'fill-opacity': 0,
+									'stroke-opacity': 0,
+									'fill': 'blue',
+									'stroke': 'red',
+									'id': function(d, i) {
+										return 'edgepath' + i
+									}
+								})
+								.style("pointer-events", "none");
+
+							edgelabels = svg.selectAll(".edgelabel")
+								.data(links)
+								.enter()
+								.append('text')
+								.style("pointer-events", "none")
+								.attr({
+									'class': 'edgelabel',
+									'id': function(d, i) {
+										return 'edgelabel' + i
+									},
+									'dx': 50,
+									'dy': 0,
+									'width': 100,
+									'text-anchor': 'start',
+									'font-size': 10,
+									'fill': '#000'
+								});
+
+							edgelabels.append('textPath')
+								.attr('xlink:href', function(d, i) {
+									return '#edgepath' + i
+								})
+								.style("pointer-events", "none")
+								.text(function(d, i) {
+									return d.source.rname
+								});
+						}
+
+						function tick() {
+							link.attr("x1", function(d) {
+									return d.source.x;
+								})
+								.attr("y1", function(d) {
+									return d.source.y;
+								})
+								.attr("x2", function(d) {
+									return d.target.x;
+								})
+								.attr("y2", function(d) {
+									return d.target.y;
+								});
+
+							linkText.attr("x", function(d) {
+									return (d.source.x + (d.target.x - d.source.x) * 0.15);
+								})
+								.attr("y", function(d) {
+									return (d.source.y + (d.target.y - d.source.y) * 0.15);
+								});
+
+							node.attr("transform", function(d) {
+								return "translate(" + d.x + "," + d.y + ")";
+							});
+
+							edgepaths.attr('d', function(d) {
+								var path = 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y;
+								//console.log(d)
+								return path
+							});
+
+							edgelabels.attr('transform', function(d, i) {
+								if (d.target.x < d.source.x) {
+
+									bbox = this.getBBox();
+									rx = bbox.x + bbox.width / 2;
+									ry = bbox.y + bbox.height / 2;
+									return 'rotate(180 ' + rx + ' ' + ry + ')';
+								} else {
+									return 'rotate(0)';
+								}
+							});
+						}
+
+						// function color(d) {
+						//   return d._children ? "#3182bd" // collapsed package
+						//       : d.children ? "#c6dbef" // expanded package
+						//       : "#fd8d3c"; // leaf node
+						// }
+
+						// Toggle children on click.
+						function click(d) {
+							if (d3.event.defaultPrevented) return; // ignore drag
+							if (d.children) {
+								d._children = d.children;
+								d.children = null;
+							} else {
+								d.children = d._children;
+								d._children = null;
+							}
+							update();
+						}
+
+						// Returns a list of all nodes under the root.
+						function flatten(root) {
+							var nodes = [],
+								i = 0;
+
+							function recurse(node) {
+								if (node.children) node.children.forEach(recurse);
+								if (!node.id) node.id = ++i;
+								nodes.push(node);
+							}
+
+							recurse(root);
+							return nodes;
+						}
+					</script>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="jquery.min.js"></script>
+	<script>
+		window.jQuery || document.write('<script src="jquery.min.js"><\/script>')
+	</script>
+	<script src="bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/jquery.easy-autocomplete.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script> -->

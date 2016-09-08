@@ -1,0 +1,30 @@
+<html>
+	<div ng-app='KBIModule'>
+	  <div ng-controller='QueryUICtrl'>
+	    <input id="#inputA" auto-complete ui-items="querySuggestions" ng-model="inputA" /> inputA = {{inputA}}
+	    <br/>
+	    <input id="#inputB" auto-complete ui-items="querySuggestions" ng-model="inputB" /> inputB = {{inputB}}
+	  </div>
+	</div>
+
+	<script>
+		function QueryUICtrl($scope) {
+
+		  $scope.querySuggestions = ["alzheimer's", "alzheimer's disease", "alzheimer", "alzheimer disease", "alzheimer s", "alzheimers", "alzheimers disease", "alzheimer s disease", "alzheimer's disease review", "alzheimer review", "alzheimer's disease treatment", "therapy alzheimer", "biomarkers alzheimer's", "onset alzheimer's", "focal onset alzheimer's", "treatment alzheimer's", "tau alzheimer", "stress alzheimer's", "therapy alzheimer's", "oil alzheimers", "alzheimer disease review", "blueberries", "blueberries and memory", "blueberries cardiovascular", "blueberries and inflammation", "blueberries cancer", "blueberries health", "blueberries alzheimer's", "blueberries and blood pressure", "blueberries memory", "wild blueberries", "blueberries antioxidant", "blueberries brain", "anthocyanins blueberries", "blueberries cognition", "blueberries inflammation", "blueberries insulin", "blueberries aging", "blueberries and cancer", "blueberries and diabetes", "blueberries and health", "vaccinium", "vaccinium myrtillus", "vaccinium macrocarpon", "vaccinium corymbosum", "vaccinium myrtillus diabetes", "vaccinium vitis", "vaccinium vitis idaea", "vaccinium macrocarpon cranberry", "vaccinium myrtillus eye", "vaccinium vitis-idaea", "vaccinium angustifolium", "vaccinium macrocarpon cranberry urinary", "vaccinium macrocarpon urinary", "vaccinium macrocarpon or cranberry and urinary tract infections", "vaccinium meridionale", "vaccinium myrtillus anthocyanosides", "vaccinium uliginosum", "vaccinium myrtillus review", "vaccinium myrtillus extract", "vaccinium myrtillus leaf"];
+
+		}
+
+		angular.module('KBIModule', []).directive('autoComplete', function($timeout) {
+		  return function(scope, iElement, iAttrs) {
+		    iElement.autocomplete({
+		      source: scope[iAttrs.uiItems],
+		      select: function() {
+		        $timeout(function() {
+		          iElement.trigger('input');
+		        }, 0);
+		      }
+		    });
+		  };
+		});
+	</script>
+</html>
