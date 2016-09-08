@@ -1,114 +1,430 @@
-<div class="viz">
-  <svg width="1200" height="700"></svg>
+<style>
+  .node text {
+    font: 10px sans-serif;
+    pointer-events: none;
+    text-anchor: middle;
+  }
+
+  line.link {
+    fill: none;
+    stroke: #c0c2c4;
+  }
+</style>
+
+<div id="viz-container">
 </div>
 
 <script>
-  // draw graph for query1 when query1 button is clicked
-  //$('#query1').click(function() {
-    var jsonUrl = '/data/query1_graph.json';
-    var svg = d3.select("svg"),
-      width = +svg.attr("width"),
-      height = +svg.attr("height");
+  var width = 960,
+    height = 600,
+    root;
 
-    //  TODO: change to heatmap coloring later
-    var color = d3.scaleOrdinal(d3.schemeCategory20);
+  var heatcolor = d3.scaleLinear()
+    .domain([0, 8, 16])
+    .range(['#f89734', '#f7f7f7', '#1f6938']);
 
-    // initializes force simulation and saves to var simulation
-    var simulation = d3.forceSimulation()
+  var svg = d3.select("#viz-container").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  var jsonUrl = '/data/query1_graph.json';
+
+  var simulation = d3.forceSimulation()
+    .force("charge", d3.forceManyBody().strength(-200))
+    .force("link", d3.forceLink().id(function(d) {
+      return d.id;
+    }).distance(40))
+    .force("x", d3.forceX(width / 2))
+    .force("y", d3.forceY(height / 2))
+    .on("tick", ticked);
+
+  var link = svg.selectAll(".link"),
+    node = svg.selectAll(".node");
+
+  d3.json(jsonUrl, function(error, graph) {
+    if (error) throw error;
+
+    simulation.nodes(graph.nodes);
+    simulation.force("link").links(graph.links);
+
+    link = link
+      .data(graph.links)
+      .enter().append("line")
+      .attr("class", "link");
+
+    node = node
+      .data(graph.nodes)
+      .enter().append("svg:path")
+      .attr("d", d3.symbol()
+      .type(function(d) { return d.type; })
+      .size(function(d) { return Math.sqrt(d.size) * 50 || 300; }))
+      .style("fill", function(d) {
+        if (d.type === "plant") {
+          return "green";
+        } else if (d.type === "chemical") {
+          return "yellow";
+        } else if (d.type === "gene") {
+          return "blue";
+        } else if (d.type === "pathway") {
+          return "pink";
+        } else if (d.type === "disease") {
+          return "red";
+        } else {
+          return "black";
+        }
+      })
+      .attr("d", d3.symbol()
+        .size(function(d) {
+          return d.size * 10;
+        })
+        .type(function(d) {
+          if (d.type === "plant") {
+            return d3.symbolCircle;
+          } else if (d.type === "chemical") {
+            return d3.symbolTriangle;
+          } else if (d.type === "gene") {
+            return d3.symbolSquare;
+          } else if (d.type === "pathway") {
+            return d3.symbolDiamond;
+          } else if (d.type === "disease") {
+            return d3.symbolCross;
+          } else {
+            return d3.symbolStar;
+          }
+        }))
+  });
+
+  function ticked() {
+    link.attr("x1", function(d) {
+        return d.source.x;
+      })
+      .attr("y1", function(d) {
+        return d.source.y;
+      })
+      .attr("x2", function(d) {
+        return d.target.x;
+      })
+      .attr("y2", function(d) {
+        return d.target.y;
+      });
+
+    node.attr("cx", function(d) {
+        return d.x;
+      })
+      .attr("cy", function(d) {
+        return d.y;
+      });
+  }
+
+  // adds nodes as circles colored by node type (plant, chemical, gene, pathway, or disease)
+  //   node = node
+  //     .data(graph.nodes)
+  //     .enter().append("circle")
+  //     .attr("class", "node")
+  //     .attr("r", 6)
+  //     .style("fill", function(d) { // <== Add these
+  //       if (d.type === "plant") {
+  //         return "green";
+  //       } else if (d.type === "chemical") {
+  //         return "yellow";
+  //       } else if (d.type === "gene") {
+  //         return "blue";
+  //       } else if (d.type === "pathway") {
+  //         return "pink";
+  //       } else if (d.type === "disease") {
+  //         return "red";
+  //       } else {
+  //         return "black";
+  //       };
+  //     })
+  // });
+
+
+  // old code //
+
+  /*
+    var root = {
+      "name": "Eve",
+      "children": [{
+        "name": "Cain"
+      }, {
+        "name": "Seth",
+        "children": [{
+          "name": "Enos"
+        }, {
+          "name": "Noam"
+        }]
+      }, {
+        "name": "Abel"
+      }, {
+        "name": "Awan",
+        "children": [{
+          "name": "Enoch"
+        }]
+      }, {
+        "name": "Azura"
+      }]
+    };
+
+    //initialising hierarchical data
+    root = d3.hierarchy(root);
+
+    var i = 0;
+
+    var transform = d3.zoomIdentity;;
+
+    var nodeSvg, linkSvg, simulation, nodeEnter, linkEnter;
+
+    var svg = d3.select("div#viz-container").append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .call(d3.zoom().scaleExtent([1 / 2, 8]).on("zoom", zoomed))
+    .append("g")
+      .attr("transform", "translate(0,0)");
+
+    function zoomed() {
+      svg.attr("transform", d3.event.transform);
+    }
+
+    simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d) {
         return d.id;
       }))
       .force("charge", d3.forceManyBody())
-      .force("center", d3.forceCenter(width / 2, height / 2));
+      .force("center", d3.forceCenter(width / 2, height / 2))
+      .on("tick", ticked);
 
-    // load JSON data into d3 scope
-    d3.json(jsonUrl, function(error, graph) {
-      if (error) throw error;
+    update();
 
+    function update() {
+      var nodes = flatten(root);
+      var links = root.links();
 
-    var link = svg.append("g")
-        .attr("class", "links")
-      .selectAll("line")
-      .data(graph.edges)
-      .enter().append("line")
-        .attr("stroke-width", function(d) { return Math.sqrt(d.weight); });
+      linkSvg = svg.selectAll(".link")
+        .data(links, function(d) {
+          return d.target.id;
+        })
 
-    var node = svg.append("g")
-      .attr("class", "nodes")
-      .selectAll("circle")
-      .data(graph.nodes)
-      .enter().append("circle")
-      .attr("r", function(d) {
-        return d.size;
-      })
-      .attr("fill", function(d) { return color(d.shape); }) //NOTE: circle = 0, triangle = 1, square = 2, diamond = 3, cross = 4
-      .call(d3.drag()
+      linkSvg.exit().remove();
+
+      var linkEnter = linkSvg.enter()
+        .append("line")
+        .attr("class", "link");
+
+      linkSvg = linkEnter.merge(linkSvg)
+
+      nodeSvg = svg.selectAll(".node")
+        .data(nodes, function(d) {
+          return d.id;
+        })
+
+      nodeSvg.exit().remove();
+
+      var nodeEnter = nodeSvg.enter()
+        .append("g")
+        .attr("class", "node")
+        .on("click", click)
+        .call(d3.drag()
           .on("start", dragstarted)
           .on("drag", dragged)
-          .on("end", dragended));
+          .on("end", dragended))
+
+      nodeEnter.append("circle")
+        .attr("r", 5)
+        .attr("opacity", 0.25)
+        .append("title")
+        .text(function(d) {
+          return d.data.name;
+        })
+
+      nodeEnter.append("text")
+        .attr("dy", 3)
+        .attr("x", function(d) {
+          return d.children ? -8 : 8;
+        })
+        .style("text-anchor", function(d) {
+          return d.children ? "end" : "start";
+        })
+        .text(function(d) {
+          return d.data.name;
+        });
+
+      nodeSvg = nodeEnter.merge(nodeSvg);
 
       simulation
-        .nodes(graph.nodes)
-        .on("tick", ticked);
+        .nodes(nodes)
 
-      simulation.force("link") // SUSPICIOUS!
-        .links(graph.edges); // set force-directed graph links to graph.edges
+      simulation.force("link")
+        .links(links);
 
-      // tick handler
-    //   function ticked() {
-    //     link
-    //       .attr("x1", function(d) {
-    //         return d.source.x;
-    //       })
-    //       .attr("y1", function(d) {
-    //         return d.source.y;
-    //       })
-    //       .attr("x2", function(d) {
-    //         return d.target.x;
-    //       })
-    //       .attr("y2", function(d) {
-    //         return d.target.y;
-    //       });
-    //
-    //     node
-    //       .attr("cx", function(d) {
-    //         return d.x;
-    //       })
-    //       .attr("cy", function(d) {
-    //         return d.y;
-    //       });
-    //   }
-    // });
+    }
 
     function ticked() {
-      link
-          .attr("x1", function(d) { return d.source.x; })
-          .attr("y1", function(d) { return d.source.y; })
-          .attr("x2", function(d) { return d.target.x; })
-          .attr("y2", function(d) { return d.target.y; });
+      linkSvg
+        .attr("x1", function(d) {
+          return d.source.x;
+        })
+        .attr("y1", function(d) {
+          return d.source.y;
+        })
+        .attr("x2", function(d) {
+          return d.target.x;
+        })
+        .attr("y2", function(d) {
+          return d.target.y;
+        });
 
-      node
-          .attr("cx", function(d) { return d.x; })
-          .attr("cy", function(d) { return d.y; });
+      nodeSvg
+        .attr("transform", function(d) {
+          return "translate(" + d.x + ", " + d.y + ")";
+        });
     }
-  });
 
-    // drag event handlers for nodes
+    function click(d) {
+      if (d.children) {
+        d._children = d.children;
+        d.children = null;
+        update();
+        simulation.restart();
+      } else {
+        d.children = d._children;
+        d._children = null;
+        update();
+        simulation.restart();
+      }
+    }
+
     function dragstarted(d) {
-      if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-      d.fx = d.x;
-      d.fy = d.y;
+      if (!d3.event.active) simulation.alphaTarget(0.9).restart()
+      simulation.fix(d);
     }
 
     function dragged(d) {
-      d.fx = d3.event.x;
-      d.fy = d3.event.y;
+      simulation.fix(d, d3.event.x, d3.event.y);
     }
 
     function dragended(d) {
       if (!d3.event.active) simulation.alphaTarget(0);
-      d.fx = null;
-      d.fy = null;
+      simulation.unfix(d);
     }
-  //});
+
+    function flatten(root) {
+      // hierarchical data to flat data for force layout
+      var nodes = [];
+
+      function recurse(node) {
+        if (node.children) node.children.forEach(recurse);
+        if (!node.id) node.id = ++i;
+        else ++i;
+        nodes.push(node);
+      }
+      recurse(root);
+      return nodes;
+    }
+  */
+
+  /**
+      // var jsonUrl = '/data/query1_graph.json';
+      //
+      // var svg = d3.select("svg"),
+      //   width = +svg.attr("width"),
+      //   height = +svg.attr("height");
+      //
+      // var color = d3.scaleOrdinal(d3.schemeCategory20); // TODO: change to heatmap coloring later
+
+      var simulation = d3.forceSimulation()
+        .force("link", d3.forceLink().id(function(d) {
+          return d.id;
+        }))
+        .force("charge", d3.forceManyBody())
+        .force("center", d3.forceCenter(width / 2, height / 2));
+
+      // load JSON data into d3 scope
+      d3.json(jsonUrl, function(error, json) {
+        if (error) throw error;
+
+
+        var link = svg.append("g")
+          .attr("class", "links")
+          .selectAll("line")
+          .data(json.edges)
+          .enter().append("line")
+          .attr("stroke-width", function(d) {
+            return Math.sqrt(d.weight);
+          });
+
+        var node = svg.append("g")
+          .attr("class", "nodes")
+          .selectAll("circle")
+          .data(json.nodes)
+          .enter().append("circle")
+          .attr("r", function(d) {
+            return d.size;
+          })
+          .attr("fill", function(d) {
+            return color(d.shape);
+          }) //NOTE: circle = 0, triangle = 1, square = 2, diamond = 3, cross = 4
+          .call(d3.drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended));
+
+        var text = node.append("text") // append text
+          .style("fill", "black") // fill the text with the colour black
+          .attr("x", node.x) // set x position of left side of text
+          .attr("y", 100) // set y position of bottom of text
+          .attr("dy", ".35em") // set offset y position
+          .attr("text-anchor", "middle") // set anchor y justification
+          .text("Hello World"); // define the text to display
+
+        simulation
+          .nodes(json.nodes)
+          .on("tick", ticked);
+
+        simulation.force("link") // SUSPICIOUS!
+          .links(json.edges); // set force-directed graph links to json.edges
+
+        function ticked() {
+          link
+            .attr("x1", function(d) {
+              return d.source.x;
+            })
+            .attr("y1", function(d) {
+              return d.source.y;
+            })
+            .attr("x2", function(d) {
+              return d.target.x;
+            })
+            .attr("y2", function(d) {
+              return d.target.y;
+            });
+
+          node
+            .attr("cx", function(d) {
+              return d.x;
+            })
+            .attr("cy", function(d) {
+              return d.y;
+            });
+        }
+      });
+
+      // drag event handlers for nodes
+      function dragstarted(d) {
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      }
+
+      function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+      }
+
+      function dragended(d) {
+        if (!d3.event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+      }
+      */
 </script>
